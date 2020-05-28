@@ -6,6 +6,8 @@ date:   2016-09-04
 
 ### Markdown test document
 
+Exemplo de texto em português com outras letras: ç, não, mãe
+
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be have dotted underlines and solid underlines on hover.
 
 There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs. There should be whitespace between paragraphs.
@@ -129,22 +131,22 @@ Also, `this should vertically align` ~~`with this`~~ ~~and this~~.
 
 Code can also be shown in a block element.
 
-```JavaScript
+```javascript
 var foo = "bar";
 ```
 
 Code can also use syntax highlighting.
 
-{% highlight javascript %}
+```javascript
 var foo = "bar";
-{% endhighlight %}
+```
 
 ```
 Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 ```
 
 
-{% highlight python %}
+```python
 def fn():
   class K:
     def __init__(self):
@@ -152,7 +154,7 @@ def fn():
       print(x)
     
   return 1
-{% endhighlight %}
+```
 
 Inline code inside table cells should still be distinguishable.
 
