@@ -16,7 +16,7 @@
 title: Connecting the dots
 description: Where theory meets practice
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://felipevalladao.com" # the base hostname & protocol for your site, e.g. http://example.com
 # github_repo: jekyll # the GitHub repo name for your project
 github_username: fvall
 
