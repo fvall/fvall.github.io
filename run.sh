@@ -1,3 +1,2 @@
-run_server(){
-    bundle exec jekyll serve --force_polling -H 0.0.0.0 -P 4000
-}
+# docker-compose exec serve bundle install
+docker-compose run --rm --service-ports serve

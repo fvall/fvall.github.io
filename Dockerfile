@@ -7,5 +7,5 @@ RUN gem install bundler -v "~>1.0" && gem install bundler jekyll
 
 EXPOSE 4000
 WORKDIR /site
-COPY run.sh run.sh
+
 CMD ["bash"]
