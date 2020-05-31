@@ -96,6 +96,17 @@ div, code {
     }
 }
 
+.descr {
+
+  font-size: $h4-size;
+  font-family: $header-font-family;
+  @media (max-width: $breakpoint-lg) {
+    font-size: $h5-size;
+  
+  }
+
+}
+
 .summary {
   
   font-size: 1.25 * $body-font-size;
@@ -169,7 +180,7 @@ div, code {
     font-style: italic;
 
     p {
-      font-size: 24px;
+      font-size: 1.2em;
     }
 
     @media (min-width: $breakpoint-lg) {
@@ -178,7 +189,7 @@ div, code {
       max-width: (11 / 10 * 100%);
 
       p {
-        font-size: 32px;
+        font-size: 1.5em;
       }
 
     }

@@ -5,8 +5,13 @@
   margin-top: 0.85em;
   word-wrap: break-word;
 
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  
   @media (min-width: $breakpoint-lg) {
     font-size: $h0-desktop;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 
