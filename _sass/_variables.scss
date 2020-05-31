@@ -6,11 +6,10 @@ $base-font-size: 16px;
 $body-font-family: "Raleway", "Helvetica Neue", Arial, sans-serif;
 $body-font-size: $base-font-size;
 $prose-font-size: 1.0 * $body-font-size;
-$summary-font-size: 1.25 * $body-font-size;
 $header-font-family: "Spartan", "Helvetica Neue", Arial, sans-serif;
 
 // Type scale
-$h0-mobile: 4 * $body-font-size;
+$h0-mobile: 3 * $body-font-size;
 $h0-desktop: 6 * $body-font-size;
 
 $h1-size: 2.5 * $body-font-size !default;
