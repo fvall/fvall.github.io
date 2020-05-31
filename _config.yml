@@ -38,9 +38,4 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-exclude:
-  Dockerfile
-  docker-compose.yml
-  run.sh
-  server.sh
-  LICENSE.txt
+exclude: [Dockerfile, docker-compose.yml, run.sh, server.sh, LICENSE.txt]
