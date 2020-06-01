@@ -173,6 +173,20 @@
   &:hover {
     text-decoration: none !important;
   }
+
+  svg{
+    &:hover{
+      fill: $color-dot-accent;
+    }
+
+    fill:$color-background
+
+  }
+
+  // svg.octicon-mark-github {
+  //     background-color: $color-dot-accent
+  // }
+
 }
 
 // Link styles for navigation
