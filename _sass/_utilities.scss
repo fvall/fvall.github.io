@@ -73,6 +73,12 @@
   .sm-width-full { width: 100% !important; }
 }
 
+@media (max-width: $breakpoint-sm) {
+  .phone-width-full { width: 100% !important; }
+}
+
+
+
 .block        { display: block !important; }
 .inline-block { display: inline-block !important; }
 
@@ -86,6 +92,7 @@
   content: " ";
   display: table
 }
+
 .clearfix:after { clear: both }
 
 .align-middle { vertical-align: middle; }
@@ -162,6 +169,35 @@
   .mr-lg-4 { margin-right: $spacer-4; }
   .mb-lg-4 { margin-bottom: $spacer-4; }
   .ml-lg-4 { margin-left: $spacer-4; }
+}
+
+@media (min-width: $breakpoint-sm) {
+  .mx-sm-auto { margin-left: auto; margin-right: auto; }
+
+  .mt-sm-0 { margin-top: 0; }
+  .mr-sm-0 { margin-right: 0; }
+  .mb-sm-0 { margin-bottom: 0; }
+  .ml-sm-0 { margin-left: 0; }
+
+  .mt-sm-1 { margin-top: $spacer-1; }
+  .mr-sm-1 { margin-right: $spacer-1; }
+  .mb-sm-1 { margin-bottom: $spacer-1; }
+  .ml-sm-1 { margin-left: $spacer-1; }
+
+  .mt-sm-2 { margin-top: $spacer-2; }
+  .mr-sm-2 { margin-right: $spacer-2; }
+  .mb-sm-2 { margin-bottom: $spacer-2; }
+  .ml-sm-2 { margin-left: $spacer-2; }
+
+  .mt-sm-3 { margin-top: $spacer-3; }
+  .mr-sm-3 { margin-right: $spacer-3; }
+  .mb-sm-3 { margin-bottom: $spacer-3; }
+  .ml-sm-3 { margin-left: $spacer-3; }
+
+  .mt-sm-4 { margin-top: $spacer-4; }
+  .mr-sm-4 { margin-right: $spacer-4; }
+  .mb-sm-4 { margin-bottom: $spacer-4; }
+  .ml-sm-4 { margin-left: $spacer-4; }
 }
 
 // Link styles for social icons
