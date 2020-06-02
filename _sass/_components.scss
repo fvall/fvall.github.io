@@ -5,13 +5,13 @@ pre {
     //border-left: $spacer-1 solid $color-border;
     margin: $spacer-3 0;
     padding-left: 16px;
-    width: (9 / 12 * 100%); // matches col-9
+    width: (12 / 12 * 100%); // matches col-9
     overflow-x: auto;
 }
 
 code {
     //color: $color-code;
-    font-size: $body-font-size;
+    font-size: 0.9 * $body-font-size;
     padding: 1px 0px;
 }
 
@@ -19,11 +19,29 @@ div, code {
 
     pre.highlight {
       padding: 0.5em;
+      padding-left: 1em;
     }
 
-    .highlight, .highlighter-rouge {
-      
-      background: #272822; color: #f8f8f2; border-radius: 4px;
+    .highlight{
+      margin-left: -$spacer-1;
+      margin-right: -$spacer-2;
+
+      @media (min-width: $breakpoint-sm){
+        border-radius: 4px;
+        margin-left: inherit;
+        margin-right: inherit;
+      }
+
+    }
+
+    .highlighter-rouge{
+      border-radius: 4px;
+    }
+
+    .highlight, .highlighter-rouge {      
+
+
+      background: #272822; color: #f8f8f2;
       .hll { background-color: #49483e }
       .c { color: #75715e } /* Comment */
       .err { color: #960050; background-color: #1e0010 } /* Error */
