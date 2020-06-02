@@ -177,6 +177,7 @@
   svg{
     &:hover{
       fill: $color-dot-accent;
+      transition: ease 0.2s;
     }
 
     fill:$color-background
