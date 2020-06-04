@@ -153,6 +153,12 @@ div, code {
     color: $color-text-accent
   }
 
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    a {
+      color: inherit
+    }
+  }
+
   p, ol, ul {
     font-size: $prose-font-size;
     margin-bottom: 1em;

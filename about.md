@@ -4,18 +4,17 @@ title: About
 permalink: /about/
 ---
 
-Swiss is a bold Jekyll theme inspired by Swiss design and the works of Massimo Vignelli. This theme lends itself well to sites heavy on written content.
+Being curious can be hard work sometimes. You start by looking at something and then it ignites: "Oh, that's interesting. I wonder how it really works...".
 
-### Features:
-* Mobile-first design ensures this theme performs fastest on mobile while scaling elegantly to desktop-size screens.
-* Designed for blogs and sites heavy on written content, with bold typography styles, homepage summaries, and previous/next snippets.
-* Supports a wide range of HTML elements and markdown.
-* Flexible styles that can be reused for customization without adding additional CSS.
-* Simple styling for code snippets (if you want something with syntax highlighting, checkout ....)
-* Dynamically generated navigation links. See docs below for adding pages with specific post category for-loops.
+When you realise, you have 20 tabs open in your browser, you watched 10 YouTube videos, you have looked at the source code on Github, and finally you are reading a tutorial explaining how all of that is tied together. Sometimes however, the journey is not as pleasant. You keep going from source to source, getting into a rabbit hole that makes you wonder: "How the hell did I get here?"
 
-## Themes
+I have had a fair share of journeys through rabbit holes when trying to understand how some things truly work under the hood. I am passionate about mathematics and finance and this blog is my attempt:
 
-## Browser Support
+1. to build the bridge between math and finance
+2. to make their connection easier to understand
+3. to shorten your journey when you are trying to find out what is really going on
 
-## Installation
+I am firm believer that theory is best understood once it is put in practice, so we will be getting our hands dirty (coding, formula derivation, etc) from time to time. If you found this blog after a similar situation as I described above, I hope you can find some of the answers you seek here. 
+
+
+> Felipe de Souza Valladão
