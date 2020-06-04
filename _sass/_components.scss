@@ -150,11 +150,7 @@ div, code {
 .prose {
 
   a {
-    text-decoration: underline dotted;
-
-    &:hover {
-      text-decoration: underline;
-    }
+    color: $color-text-accent
   }
 
   p, ol, ul {
