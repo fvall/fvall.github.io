@@ -23,8 +23,8 @@ div, code {
     }
 
     .highlight{
-      margin-left: -$spacer-1;
-      margin-right: -$spacer-2;
+      margin-left: -$spacer-2;
+      margin-right: -$spacer-2 -$spacer-1;
 
       @media (min-width: $breakpoint-sm){
         border-radius: 4px;
@@ -160,12 +160,14 @@ div, code {
   }
 
   p, ol, ul {
-    font-size: $prose-font-size;
-    margin-bottom: 1em;
+    font-size: $body-font-size;
+    margin-bottom: 1.2em;
     width: 100%;
+    letter-spacing: inherit;
 
     @media (min-width: $breakpoint-lg) {
       width: (10 / 12 * 100%); // matches col-10
+      font-size: $prose-font-size;
     }
 
   }
