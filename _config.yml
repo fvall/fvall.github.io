@@ -38,4 +38,7 @@ markdown: kramdown
 kramdown:
   input: GFM
 
+plugins:
+  - jemoji
+    
 exclude: [Dockerfile, docker-compose.yml, run.sh, server.sh, LICENSE.txt]
