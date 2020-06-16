@@ -22,7 +22,7 @@ I have had a fair share of journeys through rabbit holes when trying to understa
 2. show some examples of how you may use certain theories in practice
 3. shorten your journey when you are trying to find out what is really going on
 
-Very often these concepts need to be implemented in some programming language, so you can expect some posts about programming as well. I am a firm believer that theory is best understood once it is put in practice, so we will be getting our hands dirty from time to time. What's the fun of only reading about it and not actually doing it?
+Very often these concepts need to be implemented in some programming language, so you can expect some posts about programming as well. I am a firm believer that theory is best understood once it is put into practice, so we will be getting our hands dirty from time to time. What's the fun of only reading about it and not actually doing it?
 
 If you found this blog after a similar situation as I described above, I hope you can find some of the answers you seek here. 
 
