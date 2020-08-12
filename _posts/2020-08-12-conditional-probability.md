@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Making better decisions"
-date:   2020-08-10
+date:   2020-08-12
 categories: statistics
 permalink: /posts/en/:title/
 ---
