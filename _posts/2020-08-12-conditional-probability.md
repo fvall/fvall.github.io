@@ -58,7 +58,9 @@ $$
 
 If you are familiar with sets, this is quite intuitive. Since we know $A$ has already happened, the only section of $B$ that can happen must have something in common with $A$. This is represented by $B \cap A$. Normally we would consider all possibilities, but this would be incorrect in this case since we know $A$ has occurred. We only need to consider the events which belong to $A$.
 
-If we represent the number of elements of a set $S$ by $N(S)$, we can "derive" the formula above based on our intuition
+If we represent the number of elements of a set $S$ by $N(S)$, we can "derive"[^1] the formula above based on our intuition
+
+[^1]: This is far from a formal derivation, but I think it represents the idea
 
 <br>
 
@@ -92,3 +94,5 @@ That's the gist of conditional probability. If you fully understood the basics o
 
 
 Until next time. :v:
+
+~~~
