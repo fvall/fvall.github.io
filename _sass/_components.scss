@@ -184,12 +184,24 @@ div, code {
     }
   }
 
+  iframe.youtube, .MJXc-display{
+      
+      width: $youtube-width;
+      @media (min-width: $breakpoint-lg) {
+        width: $youtube-width * (10 / 12); // matches col-10
+        font-size: $prose-font-size;
+      }
+
+      height: $youtube-height;
+      // padding-bottom: $youtube-height;
+  }
+
   img {
 
     max-width: 100%;
 
     @media (min-width: $breakpoint-lg) {
-      max-width: (12 / 10 * 100%); // make image fill width of container on desktop
+      max-width: (12 / 10 * 100%); // make image full width of container on desktop
     }
 
   }

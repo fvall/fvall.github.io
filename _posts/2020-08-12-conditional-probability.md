@@ -65,7 +65,13 @@ If we represent the number of elements of a set $S$ by $N(S)$, we can "derive"[^
 <br>
 
 $$
- \dfrac{N(B \cap A)}{N(A)} = \dfrac{N(B \cap A)}{N(A)} \times \dfrac{N(\text{all possibilities})}{N(\text{all possibilities})} = \dfrac{N(B \cap A)}{N(\text{all possibilities)}} \times \dfrac{N(\text{all possibilities})}{N(A)} = \dfrac{P(B \cap A)}{P(A)}
+\begin{aligned}
+ \dfrac{N(B \cap A)}{N(A)} &= \dfrac{N(B \cap A)}{N(A)} \times \dfrac{N(\text{all possibilities})}{N(\text{all possibilities})}\\
+ &\\
+ &= \dfrac{N(B \cap A)}{N(\text{all possibilities)}} \times \dfrac{N(\text{all possibilities})}{N(A)}\\
+ &\\
+ &= \dfrac{P(B \cap A)}{P(A)}
+\end{aligned}
 $$
 
 <br>
@@ -82,13 +88,14 @@ I hope after the explanation above, it is clear how we can use information to im
 
 <br>
 
-<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/iBdjqtR2iK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <iframe class="youtube" width="800" height="450" src="https://www.youtube-nocookie.com/embed/iBdjqtR2iK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+<iframe class="youtube" src="https://www.youtube-nocookie.com/embed/iBdjqtR2iK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br>
 
 That's the gist of conditional probability. If you fully understood the basics of conditional probability, you should be able to solve this riddle without a problem.
 
-<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/cpwSGsb-rTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="youtube" width="800" height="450" src="https://www.youtube-nocookie.com/embed/cpwSGsb-rTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br>
 

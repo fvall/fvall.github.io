@@ -40,3 +40,9 @@ $spacer-1: $spacer !default; // 8px
 $spacer-2: ($spacer * 2) !default; // 16px
 $spacer-3: ($spacer * 4) !default; // 32px
 $spacer-4: ($spacer * 8) !default; // 64px
+
+// Video
+
+// - Youtube
+$youtube-width: 100%;
+$youtube-height: $youtube-width * 0.5625;
