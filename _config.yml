@@ -40,5 +40,6 @@ kramdown:
 
 plugins:
   - jemoji
+  - jekyll-seo-tag
     
 exclude: [Dockerfile, docker-compose.yml, run.sh, server.sh, LICENSE.txt]
