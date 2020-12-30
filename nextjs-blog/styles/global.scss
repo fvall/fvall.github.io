@@ -35,7 +35,7 @@ a {
   }
 
   h3 {
-    color: $color-primary;
+    color: lighten($color-primary, 10%);
     font-style: italic;
   }
 }
@@ -78,4 +78,61 @@ a {
   background-color: coral;
   width: 100%;
   padding: 4rem;
+}
+
+.post-list {
+  margin: 0 auto;
+  max-width: 50%;
+  margin-bottom: 2rem;
+}
+
+.post-card {
+  margin: 2rem auto;
+  background-color: $dark-1;
+  max-width: 80%;
+  padding: 1rem;
+  transition: 0.3s ease;
+  &:hover {
+    background-color: $dark-2;
+    transform: scale(1.02);
+  }
+
+  p {
+    margin: 1rem 0rem 0rem 0rem;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    h2 {
+      width: 30rem;
+      white-space: nowrap;
+      margin-bottom: 0.8rem;
+      margin-right: 1rem;
+    }
+    &::after {
+      content: "";
+      height: 2px;
+      width: 100%;
+      position: relative;
+      background-color: $color-primary;
+    }
+  }
+
+  .card-date {
+    display: flex;
+    align-items: center;
+    p {
+      margin: 0;
+      padding-left: 0.7rem;
+    }
+  }
+
+  .card-categories {
+    display: flex;
+    align-items: center;
+    h4 {
+      margin-left: 0.5rem;
+    }
+  }
 }

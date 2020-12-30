@@ -3,6 +3,8 @@ import Link from "next/link";
 import Nav from "../../components/nav";
 import PostList from "../../components/post-list";
 import { get_all_posts, get_post } from "../../lib/posts";
+import { format } from "date-fns";
+import truncate from "truncate-html";
 
 export default function BlogHome({ posts }) {
   return (
@@ -37,12 +39,21 @@ export async function getStaticProps() {
     .map((p) => {
       return { id: p.params.id, slug: p.params.slug, ...get_post(p.params.id) };
     })
+    .sort((a, b) => {
+      if (a.date < b.date) {
+        return 1;
+      } else {
+        return -1;
+      }
+    })
     .map((p) => {
       return {
         title: p.title,
         categories: p.categories,
         id: p.id,
         slug: p.slug,
+        date: format(p.date, "LLLL dd, yyyy"),
+        desc: truncate(p.content, 25, { byWords: true, stripTags: true }),
       };
     });
 

@@ -11,8 +11,10 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.13",
+    "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
     "next": "^10.0.0",
     "react": "16.13.1",
@@ -26,6 +28,7 @@
     "remark-parse": "^9.0.0",
     "remark-rehype": "^8.0.0",
     "sass": "^1.30.0",
+    "truncate-html": "^1.0.3",
     "unified": "^9.2.0"
   }
 }
