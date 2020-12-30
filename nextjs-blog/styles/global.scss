@@ -21,6 +21,13 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-family: $font-title;
+}
+
+@import "nav";
+@import "page";
+
 .blog-home-hero {
   min-height: 40;
   max-width: 70%;
@@ -37,39 +44,6 @@ a {
   h3 {
     color: lighten($color-primary, 10%);
     font-style: italic;
-  }
-}
-
-.blog-home {
-  nav {
-    display: flex;
-    background-color: transparent;
-    width: 100%;
-    padding: 1rem 4rem;
-    align-items: center;
-    justify-content: space-between;
-
-    ul {
-      display: flex;
-    }
-
-    .links {
-      li {
-        padding: 0rem 2rem;
-      }
-    }
-    .social-media {
-      display: flex;
-      li {
-        padding: 0rem 0.5rem;
-      }
-      svg {
-        transition: 0.3s ease;
-        &:hover {
-          color: lighten($color-primary, 10%);
-        }
-      }
-    }
   }
 }
 

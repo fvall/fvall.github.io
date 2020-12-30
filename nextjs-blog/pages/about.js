@@ -10,20 +10,15 @@ const about_md = path.join(path.dirname(process.cwd()), "about.md");
 
 export default function About({ content, title }) {
   return (
-    <div className="blog-home">
+    <div className="about">
       <Head>
         <title>Connecting the dots</title>
       </Head>
-      <Nav>
-        <ul>
-          <li>
-            <Link href="/">Connecting the dots</Link>
-          </li>
-        </ul>
-      </Nav>
-      <main className="single-page">
+      <Nav />
+      <main>
         <header>
-          <h2>{title}</h2>
+          <h1>{title}</h1>
+          <div className="header-line"></div>
         </header>
         <article
           className="page-content"

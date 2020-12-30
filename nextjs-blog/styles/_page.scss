@@ -1,0 +1,46 @@
+.about {
+  h1,
+  h2 {
+    font-family: $font-title;
+  }
+
+  main {
+    padding: 1rem 2rem 1rem 2rem;
+    width: min(100%, max(50vw, 764px));
+    margin: 0% auto;
+    background-color: $dark-2;
+    box-shadow: -1px 1px 2px darken($dark-1, 5%);
+    header {
+      margin: 3rem 0rem;
+      display: flex;
+      align-items: center;
+      h1 {
+        font-size: 6rem;
+        margin-right: 2rem;
+      }
+      .header-line {
+        height: 2px;
+        width: 100%;
+        background-color: $color-primary;
+      }
+
+      @media screen and (max-width: 550px) {
+        header {
+          flex-direction: column;
+        }
+      }
+    }
+
+    article {
+      p {
+        line-height: 1.4rem;
+        margin: 0.8rem 0rem;
+      }
+
+      h2 {
+        margin: 3rem 0rem 2rem 0rem;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
