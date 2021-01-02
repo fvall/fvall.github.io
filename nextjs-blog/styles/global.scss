@@ -12,8 +12,9 @@ body {
   font-family: $font-body;
 }
 
-li {
-  list-style: none;
+ul,
+ol {
+  list-style-position: inside;
 }
 
 a {
@@ -26,7 +27,9 @@ h1 {
 }
 
 @import "nav";
+@import "title";
 @import "page";
+@import "post";
 
 .blog-home-hero {
   min-height: 40;
@@ -55,6 +58,9 @@ h1 {
 }
 
 .post-list {
+  li {
+    list-style: none;
+  }
   margin: 0 auto;
   max-width: 50%;
   margin-bottom: 2rem;
