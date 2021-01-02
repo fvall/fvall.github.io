@@ -1,6 +1,7 @@
 import Head from "next/head";
-import Link from "next/link";
 import Nav from "../../components/nav";
+import Content from "../../components/content";
+import Title from "../../components/title";
 import PostList from "../../components/post-list";
 import { get_all_posts, get_post } from "../../lib/posts";
 import { format } from "date-fns";
@@ -13,21 +14,20 @@ export default function BlogHome({ posts }) {
         <title>Connecting the dots</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
-        <Nav />
-        <div className="blog-home-hero">
-          <h1>Connecting the dots</h1>
-          <h3>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi
-            quidem facilis soluta, laudantium reprehenderit dolore ullam
-            provident voluptatibus libero illo.
-          </h3>
-        </div>
-        <div className="measure"></div>
-        <PostList posts={posts} />
-      </main>
-
+      <Nav />
+      <Content>
+        <main>
+          <div className="blog-home-hero">
+            <Title title={"Connecting the dots"} line={false} />
+            <h3>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi
+              quidem facilis soluta, laudantium reprehenderit dolore ullam
+              provident voluptatibus libero illo.
+            </h3>
+          </div>
+          <PostList posts={posts} />
+        </main>
+      </Content>
       <footer></footer>
     </div>
   );

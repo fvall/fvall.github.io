@@ -1,0 +1,107 @@
+.blog-home-hero {
+  .content-title {
+    width: 100%;
+    h1 {
+      margin: 0rem;
+      width: 100%;
+      font-family: $font-title;
+      text-align: center;
+    }
+  }
+
+  h3 {
+    color: lighten($color-primary, 10%);
+    font-style: italic;
+  }
+}
+
+.blog-home {
+  .content-area {
+    main {
+      background-color: $dark-1;
+      box-shadow: none;
+      width: min(100%, max(70vw, 50rem));
+      margin: 0% auto;
+    }
+  }
+
+  .post-list {
+    li {
+      list-style: none;
+    }
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .post-card {
+    margin: 2rem auto;
+    background-color: $dark-1;
+    max-width: 80%;
+    padding: 1rem;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: $dark-2;
+      transform: scale(1.02);
+    }
+
+    p {
+      margin: 1rem 0rem 0rem 0rem;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      .content-title {
+        margin: 0;
+        width: 100%;
+        h1 {
+          font-family: $font-body;
+          font-size: 1.5rem;
+          white-space: nowrap;
+          margin-bottom: 0.8rem;
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    .card-date {
+      display: flex;
+      align-items: center;
+      p {
+        margin: 0;
+        padding-left: 0.7rem;
+      }
+    }
+
+    .card-categories {
+      display: flex;
+      align-items: center;
+      h4 {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .blog-home {
+    .post-card {
+      margin: 1rem 0rem;
+      p {
+        margin-top: 0.5rem;
+      }
+      .card-header {
+        .content-title {
+          h1 {
+            margin-right: 0;
+            margin-bottom: 0.2rem;
+          }
+        }
+      }
+      .card-date {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}

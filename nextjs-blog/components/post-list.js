@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Title from "./title";
 
 export default function PostList({ posts }) {
   return (
@@ -19,7 +20,7 @@ function PostCard(post) {
       <Link href={`/blog/${post.slug[0]}/${post.slug[1]}`}>
         <a>
           <div className="card-header">
-            <h2>{post.title}</h2>
+            <Title title={post.title} />
           </div>
           <div className="card-date">
             <FontAwesomeIcon icon={["far", "calendar-alt"]} />
