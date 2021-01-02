@@ -1,4 +1,8 @@
 .post {
+  hr {
+    border-color: $color-primary;
+  }
+
   .content-area {
     .content-title {
       display: block;
@@ -32,7 +36,33 @@
       }
     }
     .post-content {
+      h1,
+      h2 {
+        font-family: $font-title;
+      }
+
       margin-top: 3rem;
+      img {
+        margin: 1rem 0rem;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      iframe.youtube {
+        margin: 1rem 0rem;
+        width: 100%;
+      }
+    }
+
+    a.footnote-ref {
+      color: $color-primary;
+    }
+
+    .footnotes {
+      ol,
+      ul {
+        margin-top: 1rem;
+      }
     }
   }
 }
