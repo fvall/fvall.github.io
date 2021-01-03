@@ -4,7 +4,7 @@
     width: min(100%, max(60vw, 50rem));
     margin: 0% auto;
     background-color: $dark-2;
-    box-shadow: -1px 1px 2px darken($dark-1, 5%);
+    box-shadow: 0px 10px 10px darken($dark-1, 5%);
 
     article {
       p {
