@@ -1,11 +1,16 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from "react";
+
 import Nav from "../components/nav";
 import Content from "../components/content";
 import Title from "../components/title";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Script from "../components/script";
+import { resize_youtube } from "../public/scripts/basic";
 
 export default function Post({ content, title, date, categories }) {
+  useEffect(resize_youtube);
+
   return (
     <div className="post">
       <Head>
@@ -39,7 +44,7 @@ export default function Post({ content, title, date, categories }) {
           ></article>
         </main>
       </Content>
-      <script src={`${useRouter().basePath}/scripts/basic.js`}></script>
+      <Script scripts={["basic.js"]} />
     </div>
   );
 }

@@ -17,13 +17,13 @@ export default function BlogHome({ posts }) {
       <Nav />
       <Content>
         <main>
-          <div className="blog-home-hero">
+          <div className="hero">
             <Title title={"Connecting the dots"} line={false} />
-            <h3>
+            {/* <h3>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi
               quidem facilis soluta, laudantium reprehenderit dolore ullam
               provident voluptatibus libero illo.
-            </h3>
+            </h3> */}
           </div>
           <PostList posts={posts} />
         </main>
