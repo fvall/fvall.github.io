@@ -3,9 +3,7 @@ import Nav from "../../components/nav";
 import Content from "../../components/content";
 import Title from "../../components/title";
 import PostList from "../../components/post-list";
-import { get_all_posts, get_post } from "../../lib/posts";
-import { format } from "date-fns";
-import truncate from "truncate-html";
+import { blog_static_props } from "../../lib/posts";
 
 export default function BlogHome({ posts }) {
   return (
@@ -34,29 +32,7 @@ export default function BlogHome({ posts }) {
 }
 
 export async function getStaticProps() {
-  const paths = get_all_posts();
-  const posts = paths
-    .map((p) => {
-      return { id: p.params.id, slug: p.params.slug, ...get_post(p.params.id) };
-    })
-    .sort((a, b) => {
-      if (a.date < b.date) {
-        return 1;
-      } else {
-        return -1;
-      }
-    })
-    .map((p) => {
-      return {
-        title: p.title,
-        categories: p.categories,
-        id: p.id,
-        slug: p.slug,
-        date: format(p.date, "LLLL dd, yyyy"),
-        desc: truncate(p.content, 25, { byWords: true, stripTags: true }),
-      };
-    });
-
+  const posts = blog_static_props();
   return {
     props: {
       posts: posts,

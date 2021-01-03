@@ -12,11 +12,6 @@ export default function Nav({ children }) {
           <li>
             <Link href="/about/">About</Link>
           </li>
-          {/* <li>Blog</li>
-          <li>Projects</li> */}
-          <li>
-            <Link href="/blog/">Blog</Link>
-          </li>
         </ul>
       </div>
       <div className="social-media">

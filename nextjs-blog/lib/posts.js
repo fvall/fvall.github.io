@@ -1,7 +1,8 @@
 import fs from "fs";
-import matter from "gray-matter";
 import path from "path";
 import { parse_markdown } from "./parse";
+import { format } from "date-fns";
+import truncate from "truncate-html";
 
 export const content_path = path.join(process.cwd(), "content");
 
@@ -25,4 +26,31 @@ export function get_post(id) {
   return {
     ...parse_markdown(post),
   };
+}
+
+export function blog_static_props() {
+  const paths = get_all_posts();
+  const posts = paths
+    .map((p) => {
+      return { id: p.params.id, slug: p.params.slug, ...get_post(p.params.id) };
+    })
+    .sort((a, b) => {
+      if (a.date < b.date) {
+        return 1;
+      } else {
+        return -1;
+      }
+    })
+    .map((p) => {
+      return {
+        title: p.title,
+        categories: p.categories,
+        id: p.id,
+        slug: p.slug,
+        date: format(p.date, "LLLL dd, yyyy"),
+        desc: truncate(p.content, 25, { byWords: true, stripTags: true }),
+      };
+    });
+
+  return posts;
 }
