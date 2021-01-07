@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+#__next,
+#__first_component {
+  height: 100%;
+}
+
 @import "variables";
 
 body {
@@ -26,6 +31,7 @@ h1 {
   font-family: $font-title;
 }
 
+// @import "utils";
 @import "nav";
 @import "title";
 @import "page";

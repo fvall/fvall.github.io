@@ -4,14 +4,14 @@ nav {
   display: flex;
   background-color: transparent;
   width: 100%;
-  padding: 1rem 4rem;
+  padding: $space-2 $space-8;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0px 1px 2px darken($dark-1, 5%);
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: $dark-2;
-
+  font-size: calc(var(--font-size-sm) * 1.05);
   ul {
     display: flex;
     li {
@@ -21,8 +21,8 @@ nav {
 
   .links {
     li {
-      padding-left: 0.5rem;
-      padding-right: 2rem;
+      padding-left: $space-1;
+      padding-right: $space-4;
       a {
         position: relative;
         &::before {
@@ -35,7 +35,7 @@ nav {
           transform: scaleX(0);
           visibility: hidden;
           background-color: $color-primary;
-          transition: all 0.3s ease;
+          transition: all 0.3s ease-out;
         }
         &:hover::before {
           visibility: visible;
@@ -47,12 +47,12 @@ nav {
   .social-media {
     display: flex;
     li {
-      padding: 0rem 0.5rem;
+      padding: 0rem $space-1;
     }
     svg {
-      transition: 0.3s ease;
+      transition: 0.35s ease-out;
       &:hover {
-        color: lighten($color-primary, 10%);
+        color: lighten($color-primary, 5%);
       }
     }
   }

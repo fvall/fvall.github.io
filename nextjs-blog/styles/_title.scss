@@ -1,10 +1,10 @@
 .content-title {
-  margin: 3rem 0rem;
+  margin: $space-6 0rem;
   display: flex;
   align-items: center;
   h1 {
-    font-size: 5rem;
-    margin-right: 2rem;
+    font-size: var(--font-size-post-title);
+    margin-right: $space-4;
   }
   .header-line {
     height: 2px;

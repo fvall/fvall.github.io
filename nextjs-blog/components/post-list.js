@@ -5,18 +5,16 @@ import Title from "./title";
 export default function PostList({ posts }) {
   return (
     <div className="post-list">
-      <ul>
-        {posts.map((p) => {
-          return <li key={p.id}>{PostCard(p)}</li>;
-        })}
-      </ul>
+      {posts.map((p) => {
+        return PostCard({ post: p, key: p.id });
+      })}
     </div>
   );
 }
 
-function PostCard(post) {
+function PostCard({ post, key }) {
   return (
-    <div className="post-card">
+    <div className="post-card" key={key}>
       <Link href={`/blog/${post.slug[0]}/${post.slug[1]}`}>
         <a>
           <div className="card-header">

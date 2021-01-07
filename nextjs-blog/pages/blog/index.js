@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Nav from "../../components/nav";
 import Content from "../../components/content";
@@ -16,7 +17,17 @@ export default function BlogHome({ posts }) {
       <Content>
         <main>
           <div className="hero">
-            <Title title={"Connecting the dots"} line={false} />
+            <div className="content-title">
+              <h1>
+                Connecting the dots
+                <div className="dots">
+                  <span className="dot-1-color">.</span>
+                  <span className="dot-2-color">.</span>
+                  <span className="dot-3-color">.</span>
+                </div>
+              </h1>
+            </div>
+            {/* <Title title={"Connecting the dots..."} line={false} /> */}
             {/* <h3>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi
               quidem facilis soluta, laudantium reprehenderit dolore ullam

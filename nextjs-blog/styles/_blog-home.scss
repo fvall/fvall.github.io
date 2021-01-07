@@ -1,13 +1,41 @@
+.dots {
+  display: inline;
+}
+
+.dot-1-color {
+  color: lighten($color-primary, 30%);
+}
+.dot-2-color {
+  color: lighten($color-primary, 20%);
+}
+.dot-3-color {
+  color: lighten($color-primary, 10%);
+}
+
+.secondary-light-color {
+  color: lighten($color-secondary, 2%);
+}
+.primary-light-color {
+  color: lighten($color-primary-light, 2%);
+}
+
+.primary-color {
+  color: lighten($color-primary, 10%);
+}
+
 .blog-home {
   .hero {
-    margin-bottom: 6rem;
     .content-title {
       width: 100%;
+      margin-top: $space-10;
       h1 {
-        margin: 0rem;
-        width: 100%;
+        display: block;
+        margin: $rem-space-4 $em-space-2;
+        max-width: 100%;
+        width: 10ch;
         font-family: $font-title;
-        text-align: center;
+        text-align: left;
+        font-size: calc(var(--font-size-4xl));
       }
     }
 
@@ -19,27 +47,30 @@
 
   .content-area {
     main {
+      padding: $space-2 $space-6;
       background-color: $dark-1;
       box-shadow: none;
-      width: min(100%, max(70vw, 50rem));
+      width: min(100%, max(min(75vw, 210ch), 130ch));
       margin: 0% auto;
     }
   }
 
   .post-list {
+    font-size: var(--font-size-text);
+    margin: 0 auto;
+    margin-top: $space-10;
     li {
       list-style: none;
     }
-    margin: 0 auto;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: $space-4;
   }
 
   .post-card {
-    margin: 2rem auto;
+    margin: $space-8 auto;
     background-color: $dark-1;
-    max-width: 80%;
-    padding: 1rem;
+    max-width: min(100%, max(80%, #{$breakpoint-sm}));
+    padding: $space-2;
     transition: 0.3s ease;
     &:hover {
       background-color: $dark-2;
@@ -47,7 +78,7 @@
     }
 
     p {
-      margin: 1rem 0rem 0rem 0rem;
+      margin-top: $space-2;
     }
 
     .card-header {
@@ -58,10 +89,10 @@
         width: 100%;
         h1 {
           font-family: $font-body;
-          font-size: 1.5rem;
+          font-size: var(--font-size-lg);
           white-space: nowrap;
-          margin-bottom: 0.8rem;
-          margin-right: 1rem;
+          margin-bottom: $space-2 * 0.8;
+          margin-right: $space-2;
         }
       }
     }
@@ -71,7 +102,7 @@
       align-items: center;
       p {
         margin: 0;
-        padding-left: 0.7rem;
+        padding-left: 0.7 * $space-2;
       }
     }
 
@@ -79,29 +110,77 @@
       display: flex;
       align-items: center;
       h4 {
-        margin-left: 0.5rem;
+        margin-left: $space-1;
       }
     }
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: $breakpoint-md) {
+  .dots {
+    display: none;
+  }
+
   .blog-home {
+    .hero {
+      .content-title {
+        h1 {
+          padding: $em-space-1 0em;
+          text-align: center;
+          width: 100%;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .blog-home {
+    .header-line {
+      height: 1.5px;
+    }
+
+    .hero {
+      .content-title {
+        h1 {
+          width: 10ch;
+          padding-left: $em-space-1;
+          padding-right: $em-space-1;
+        }
+      }
+    }
+    .content-area {
+      main {
+        padding: $space-2 $space-4;
+      }
+    }
+
     .post-card {
-      margin: 1rem 0rem;
+      margin: $space-2 auto;
       p {
-        margin-top: 0.5rem;
+        margin-top: $space-1;
       }
       .card-header {
         .content-title {
           h1 {
             margin-right: 0;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.5 * $space-1;
           }
         }
       }
       .card-date {
-        margin-top: 0.5rem;
+        margin-top: $space-1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-xs) {
+  .blog-home {
+    .content-area {
+      main {
+        padding: $space-2 $space-3;
       }
     }
   }

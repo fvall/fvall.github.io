@@ -13,7 +13,7 @@ library.add(faGithub, faLinkedin, faClock, faTag, faCalendarAlt);
 
 export default function App({ Component, pageProps }) {
   return (
-    <div>
+    <div id="__first_component">
       <Head>
         <link
           rel="shortcut icon"

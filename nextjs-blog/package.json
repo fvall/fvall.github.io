@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export -o _site"
+    "export": "next build && next export -o _site",
+    "clean" : "rm -rf _site/ && rm -rf .next/"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",

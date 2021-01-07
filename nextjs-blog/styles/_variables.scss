@@ -4,7 +4,7 @@
 ----------
 */
 
-$color-primary: #f28416;
+$color-primary: #f08821;
 $color-primary-light: #fbc58f;
 $color-secondary: #f0a822;
 $color-secondary-light: #edc273;
@@ -19,9 +19,6 @@ $dark-2-light: #868f85;
 $color-text-light: white;
 $color-text-dark: $dark-1;
 
-$background-color-1: $dark-1;
-$background-color-2: $dark-2;
-
 /*
 --------
   Fonts
@@ -30,3 +27,97 @@ $background-color-2: $dark-2;
 
 $font-body: "Assistant", "Arial", "monospace";
 $font-title: "Spartan", "Helvetica", "sans-serif";
+
+$base-size: 1.41421356;
+$base-size-slow: 1.259921;
+
+:root {
+  font-size: 62.5%;
+  --ratio: #{$base-size};
+  --font-size-xs: calc(var(--font-size-sm) - 0.2rem);
+  --font-size-sm: calc(var(--font-size-md) - 0.2rem);
+  --font-size-md: calc(#{$base-size} * 1.13rem);
+  --font-size-lg: calc(var(--font-size-md) * var(--ratio));
+  --font-size-xl: calc(var(--font-size-lg) * var(--ratio));
+  --font-size-2xl: calc(var(--font-size-xl) * var(--ratio));
+  --font-size-3xl: calc(var(--font-size-2xl) * var(--ratio));
+  --font-size-4xl: calc(var(--font-size-3xl) * var(--ratio));
+  --font-size-text: var(--font-size-md);
+  --font-size-post-title: var(--font-size-3xl);
+  --font-size-post-header: var(--font-size-xl);
+  --font-size-page-title: var(--font-size-4xl);
+}
+
+/*
+-----------
+  Spacing
+-----------
+*/
+
+$rem-space-1: 0.5rem;
+$rem-space-2: 1rem;
+$rem-space-3: 1.5rem;
+$rem-space-4: 2rem;
+$rem-space-5: 2.5rem;
+$rem-space-6: 3rem;
+$rem-space-7: 3.5rem;
+$rem-space-8: 4rem;
+$rem-space-9: 4.5rem;
+$rem-space-10: 5rem;
+
+$space-1: $rem-space-1;
+$space-2: $rem-space-2;
+$space-3: $rem-space-3;
+$space-4: $rem-space-4;
+$space-5: $rem-space-5;
+$space-6: $rem-space-6;
+$space-7: $rem-space-7;
+$space-8: $rem-space-8;
+$space-9: $rem-space-9;
+$space-10: $rem-space-10;
+
+$em-space-1: 0.5em;
+$em-space-2: 1em;
+$em-space-3: 1.5em;
+$em-space-4: 2em;
+
+$breakpoint-lg: 1024px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 500px;
+$breakpoint-xs: 400px;
+
+@media screen and (max-width: $breakpoint-lg) {
+  :root {
+    --font-size-md: calc(#{$base-size} * 1rem);
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  :root {
+    --ratio: #{$base-size * 0.95};
+    --font-size-md: calc(#{$base-size * 0.9} * 1.13rem);
+  }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  :root {
+    --ratio: #{$base-size-slow};
+    --font-size-md: calc(#{$base-size * 0.9} * 1.13rem);
+  }
+}
+
+@media screen and (max-width: $breakpoint-xs) {
+  :root {
+    --ratio: #{$base-size-slow * 0.96};
+    --font-size-md: calc(#{$base-size * 0.9 * 0.95} * 1.13rem);
+  }
+}
+
+/*
+-----------
+  Aliases
+-----------
+*/
+
+$background-color-1: $dark-1;
+$background-color-2: $dark-2;
