@@ -30,13 +30,14 @@ $font-title: "Spartan", "Helvetica", "sans-serif";
 
 $base-size: 1.41421356;
 $base-size-slow: 1.259921;
+$base-size-half: 1.1;
 
 :root {
   font-size: 62.5%;
   --ratio: #{$base-size};
-  --font-size-xs: calc(var(--font-size-sm) - 0.2rem);
-  --font-size-sm: calc(var(--font-size-md) - 0.2rem);
-  --font-size-md: calc(#{$base-size} * 1.13rem);
+  --font-size-xs: calc(var(--font-size-sm) / #{$base-size-half});
+  --font-size-sm: calc(var(--font-size-md) / #{$base-size-half});
+  --font-size-md: 1.7rem;
   --font-size-lg: calc(var(--font-size-md) * var(--ratio));
   --font-size-xl: calc(var(--font-size-lg) * var(--ratio));
   --font-size-2xl: calc(var(--font-size-xl) * var(--ratio));
@@ -83,33 +84,31 @@ $em-space-4: 2em;
 
 $breakpoint-lg: 1024px;
 $breakpoint-md: 768px;
-$breakpoint-sm: 500px;
+$breakpoint-sm: 525px;
 $breakpoint-xs: 400px;
 
 @media screen and (max-width: $breakpoint-lg) {
   :root {
-    --font-size-md: calc(#{$base-size} * 1rem);
+    --font-size-md: 1.6rem;
   }
 }
 
 @media screen and (max-width: $breakpoint-md) {
   :root {
     --ratio: #{$base-size * 0.95};
-    --font-size-md: calc(#{$base-size * 0.9} * 1.13rem);
   }
 }
 
 @media screen and (max-width: $breakpoint-sm) {
   :root {
     --ratio: #{$base-size-slow};
-    --font-size-md: calc(#{$base-size * 0.9} * 1.13rem);
+    --font-size-md: 1.5rem;
   }
 }
 
 @media screen and (max-width: $breakpoint-xs) {
   :root {
     --ratio: #{$base-size-slow * 0.96};
-    --font-size-md: calc(#{$base-size * 0.9 * 0.95} * 1.13rem);
   }
 }
 

@@ -8,7 +8,7 @@ import fs from "fs";
 import path from "path";
 import { parse_markdown } from "../lib/parse";
 
-const about_md = path.join(path.dirname(process.cwd()), "about.md");
+const about_md = path.join(process.cwd(), "about.md");
 
 export default function About({ content, title }) {
   return (

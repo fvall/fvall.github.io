@@ -1,4 +1,4 @@
 module.exports = {
-  basePath: "/nextjs-blog/_site",
+  basePath: "",
   trailingSlash: true,
 };

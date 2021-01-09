@@ -117,17 +117,12 @@
 }
 
 @media screen and (max-width: $breakpoint-md) {
-  .dots {
-    display: none;
-  }
-
   .blog-home {
     .hero {
       .content-title {
         h1 {
           padding: $em-space-1 0em;
           text-align: center;
-          width: 100%;
           margin: 0 auto;
         }
       }
@@ -144,7 +139,7 @@
     .hero {
       .content-title {
         h1 {
-          width: 10ch;
+          text-align: center;
           padding-left: $em-space-1;
           padding-right: $em-space-1;
         }
@@ -178,6 +173,9 @@
 
 @media screen and (max-width: $breakpoint-xs) {
   .blog-home {
+    .header-line {
+      height: 1px;
+    }
     .content-area {
       main {
         padding: $space-2 $space-3;

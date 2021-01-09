@@ -44,7 +44,7 @@ export default function Post({ content, title, date, categories }) {
           ></article>
         </main>
       </Content>
-      <Script scripts={["basic.js"]} />
+      {/* <Script scripts={["basic.js"]} /> */}
     </div>
   );
 }

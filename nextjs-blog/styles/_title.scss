@@ -13,7 +13,7 @@
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: $breakpoint-sm) {
   .content-title {
     display: block;
   }

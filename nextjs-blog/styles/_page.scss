@@ -16,16 +16,15 @@
   main {
     height: 100%;
     padding: $space-2 $space-4;
-    width: min(100%, max(60vw, 100ch));
+    width: min(100%, max(50vw, 100ch));
     margin: 0% auto;
     background-color: $dark-2;
     box-shadow: 0px 5px 10px darken($dark-1, 5%);
     font-size: var(--font-size-text);
     article {
       p {
-        line-height: $space-4;
+        line-height: $em-space-3;
         margin: $em-space-3 0rem;
-        text-align: justify;
       }
 
       h2 {
@@ -55,21 +54,25 @@
     .katex {
       font-size: 1.05em;
     }
-  }
-}
 
-@media screen and (max-width: $breakpoint-sm) {
-  .content-area {
-    .katex {
-      font-size: 1em;
+    main {
+      width: 100%;
     }
   }
 }
 
-@media screen and (max-width: $breakpoint-xs) {
-  .content-area {
-    .katex {
-      font-size: 0.95em;
-    }
-  }
-}
+// @media screen and (max-width: $breakpoint-sm) {
+//   .content-area {
+//     .katex {
+//       font-size: 1em;
+//     }
+//   }
+// }
+
+// @media screen and (max-width: $breakpoint-xs) {
+//   .content-area {
+//     .katex {
+//       font-size: 0.95em;
+//     }
+//   }
+// }
