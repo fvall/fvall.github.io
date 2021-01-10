@@ -1,4 +1,3 @@
-_site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
@@ -17,6 +16,7 @@ vendor
 # next.js
 /.next/
 /out/
+/_site/
 
 # production
 /build
@@ -34,10 +34,3 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
-
-# next js files
-
-/nextjs-blog/.next/
-/nextjs-blog/_site/
-/nextjs-blog/node_modules/
-/nextjs-blog/content/
