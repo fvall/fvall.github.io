@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Making better decisions"
-date:   2020-08-12
+title: "Making better decisions"
+date: 2020-08-12
 categories: statistics
 permalink: /posts/en/:title/
 ---
@@ -10,7 +10,7 @@ We tend to make better decisions once learn more about the world around us. Supp
 
 This is also true in the complicated world of probabilities. The more we know, the greater our chance to achieve the best possible outcome. The idea is quite simple, but sometimes the options are presented to us in a way that is not entirely clear how we can make use of our previous knowledge to make the best decision.
 
-The idea of using known information in probability theory is known as _conditional probability_ and sometimes the results are so counterintuitive that our minds can't grasp anything else than "WTF?". Let's start with a simple example first and then we develop the idea into actual mathematics. 
+The idea of using known information in probability theory is known as _conditional probability_ and sometimes the results are so counterintuitive that our minds can't grasp anything else than "WTF?". Let's start with a simple example first and then we develop the idea into actual mathematics.
 
 ## A simple problem
 
@@ -18,9 +18,9 @@ Let's think about those kinds of textbooks problems that will probably never hap
 
 Imagine you have three drawers:
 
-* drawer one (D1) has two <span style="color:red">red</span> balls
-* drawer two (D2) has one <span style="color:red">red</span> ball and one <span style="color:blue">blue</span> ball
-* drawer three (D3) has two <span style="color:blue">blue</span> balls
+- drawer one (D1) has two <span style="color:tomato">red</span> balls
+- drawer two (D2) has one <span style="color:tomato">red</span> ball and one <span style="color:cyan">blue</span> ball
+- drawer three (D3) has two <span style="color:cyan">blue</span> balls
 
 The problem is: suppose you open one drawer at random and pick one ball with closed eyes. Later, we see the ball is **blue**. What is the probability the other ball in that drawer is also blue?
 
@@ -38,7 +38,7 @@ Worse, this reasoning seems so plausible it is hard to see a different answer to
 
 The key idea in this post is: more information leads to a higher probability. If we stop and think, _"what was the probability of selecting two blue balls at the beginning?"_, most of us will come up with 1/3, the correct answer. Once we know the colour of the first ball, our probabilities **_increase_**, from 33% to 50% (in the answer above, which is incorrect).
 
-So, what is the problem with the reasoning above? The issue is that the information was oversimplified. The reasoning above acknowledges that we know **in which drawer cannot be**. However, we know more! We know what the color of one the balls actually is! 
+So, what is the problem with the reasoning above? The issue is that the information was oversimplified. The reasoning above acknowledges that we know **in which drawer cannot be**. However, we know more! We know what the color of one the balls actually is!
 
 At first, it may seem these are equivalent, but in fact, they are not. I created a visual representation, with the solution, to our original problem.
 
@@ -98,7 +98,6 @@ That's the gist of conditional probability. If you fully understood the basics o
 <iframe class="youtube" width="800" height="450" src="https://www.youtube-nocookie.com/embed/cpwSGsb-rTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br>
-
 
 Until next time. :v:
 
