@@ -17,12 +17,17 @@ export default function Nav({ children }) {
       <div className="social-media">
         <ul>
           <li>
-            <a href="https://github.com/fvall">
+            <a href="https://github.com/fvall" target="_blank">
               <FontAwesomeIcon icon={["fab", "github"]} size="2x" />
             </a>
           </li>
           <li>
-            <FontAwesomeIcon icon={["fab", "linkedin"]} size="2x" />
+            <a
+              href="https://www.linkedin.com/in/felipe-de-souza-valladao/"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={["fab", "linkedin"]} size="2x" />
+            </a>
           </li>
         </ul>
       </div>
