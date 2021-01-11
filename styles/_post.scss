@@ -39,9 +39,11 @@
       }
     }
     .post-content {
+      color: lighten($dark-2, 70%);
       h1,
       h2 {
         font-family: $font-title;
+        color: white;
       }
 
       margin-top: $space-7;
