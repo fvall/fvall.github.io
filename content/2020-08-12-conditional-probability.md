@@ -1,9 +1,7 @@
 ---
-layout: post
 title: "Making better decisions"
 date: 2020-08-12
 categories: statistics
-permalink: /posts/en/:title/
 ---
 
 We tend to make better decisions once learn more about the world around us. Supplied with more information, we can utilise that experience to recognize patterns and, sometimes, we can "see" how things are going to turn up. I say "tend to" because I am sure you have that friend who doesn't learn from bad decisions. Luckily, they have got you as a friend to steer them towards the right path. :+1:
@@ -30,9 +28,7 @@ _""
 Well, if one ball is blue, it could only have come from either D2 or D3. Since there is only one ball left, it will be red if I am in D2 or blue if I am in D3. Hence, the chance is 50% of having selected D3.
 ""_
 
-If you came to this conclusion, unfortunately, you would be wrong. :confused:
-
-Worse, this reasoning seems so plausible it is hard to see a different answer to this problem.
+If you came to this conclusion, unfortunately, you would be wrong. Worse, this reasoning seems so plausible it is hard to see a different answer to this problem. :confused:
 
 ## What was wrong?
 
@@ -100,5 +96,3 @@ That's the gist of conditional probability. If you fully understood the basics o
 <br>
 
 Until next time. :v:
-
----

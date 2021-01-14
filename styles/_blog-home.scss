@@ -71,7 +71,8 @@
     background-color: $dark-1;
     max-width: min(100%, max(80%, #{$breakpoint-sm}));
     padding: $space-2;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
+    border-radius: 5px;
     &:hover {
       background-color: $dark-2;
       transform: scale(1.02);

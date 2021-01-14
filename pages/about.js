@@ -35,6 +35,6 @@ export default function About({ content, title }) {
 export async function getStaticProps() {
   const about = fs.readFileSync(about_md, "utf8");
   return {
-    props: parse_markdown(about),
+    props: await parse_markdown(about),
   };
 }

@@ -6,7 +6,7 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = blog_static_props();
+  const posts = await blog_static_props();
   return {
     props: {
       posts: posts,

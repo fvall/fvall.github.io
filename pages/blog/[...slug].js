@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = get_post(params.slug.join("-"));
+  const postData = await get_post(params.slug.join("-"));
   return {
     props: {
       title: postData.title,

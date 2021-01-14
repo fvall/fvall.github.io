@@ -1,0 +1,82 @@
+/* PrismJS 1.23.0
+https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+clike+javascript+c+cpp+git+go+graphql+julia+latex+markdown+python+r+jsx+tsx+sass+scss+sql+toml+typescript+yaml */
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+code[class*="language-"],
+pre[class*="language-"],
+pre {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: var(--font-size-xs);
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  overflow: auto;
+}
+
+figure {
+  position: relative;
+  --caption-height: 3em;
+}
+
+figure pre + figcaption {
+  background-color: darken(#292d3e, 10%);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: var(--caption-height);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  padding: calc(0.25 * var(--caption-height)) 0;
+  padding-left: 1em;
+  font-size: var(--font-size-xs);
+  border-bottom: transparentize(lighten(#292d3e, 25%), 0.25%) 1px solid;
+}
+
+pre {
+  padding: calc(var(--caption-height) + 1em) 0 1em 1em;
+  border-radius: 3px;
+  box-shadow: inset 0 0 5px transparentize(darken($dark-2, 10%), 0.5%);
+}
+
+/* Code blocks */
+
+@media screen and (max-width: $breakpoint-sm) {
+  pre {
+    margin: 0.5em -2rem;
+    border-radius: 0;
+  }
+
+  figure pre + figcaption {
+    width: calc(100% + 2rem * 2);
+    margin: 0 -2rem;
+  }
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: darken($dark-1, 2%);
+}
+
+/* Inline code */
+
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
