@@ -50,7 +50,8 @@
       }
     }
 
-    a.footnote-ref {
+    a.footnote-ref,
+    a.footnote-backref {
       color: $color-primary;
     }
 

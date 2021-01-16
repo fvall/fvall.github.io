@@ -31,7 +31,7 @@ nav {
           left: 0;
           bottom: 0;
           width: 100%;
-          height: 2px;
+          height: max(0.1em, 1px);
           transform: scaleX(0);
           visibility: hidden;
           background-color: $color-primary;
