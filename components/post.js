@@ -8,7 +8,13 @@ import Title from "../components/title";
 import Script from "../components/script";
 import { resize_youtube } from "../public/scripts/basic";
 
-export default function Post({ content, title, date, categories }) {
+export default function Post({
+  content,
+  title,
+  date,
+  categories,
+  description,
+}) {
   useEffect(resize_youtube);
 
   return (
@@ -21,6 +27,7 @@ export default function Post({ content, title, date, categories }) {
           integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"
           crossOrigin="anonymous"
         />
+        <meta name="description" content={description || "unknown"} />
       </Head>
       <Nav />
       <Content>

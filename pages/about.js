@@ -15,6 +15,10 @@ export default function About({ content, title }) {
     <div className="about">
       <Head>
         <title>Connecting the dots</title>
+        <meta
+          name="description"
+          content="Connecting the dots - what the blog is all about"
+        />
       </Head>
       <Nav />
       <Content>

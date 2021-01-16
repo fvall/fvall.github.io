@@ -110,7 +110,9 @@
     .card-categories {
       display: flex;
       align-items: center;
-      h4 {
+      p {
+        margin: 0;
+        line-height: 14px;
         margin-left: $space-1;
       }
     }

@@ -30,8 +30,8 @@ function PostCard({ post, key }) {
       </Link>
       <br />
       <div className="card-categories">
-        <FontAwesomeIcon icon={["fa", "tag"]} />
-        <h4>{post.categories}</h4>
+        <FontAwesomeIcon icon={["fa", "tag"]} size="xs" />
+        <p>{post.categories}</p>
       </div>
     </div>
   );

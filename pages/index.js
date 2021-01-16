@@ -1,4 +1,4 @@
-import BlogHome from "./blog/index";
+import { BlogHome } from "./blog/index";
 import { blog_static_props } from "../lib/posts";
 
 export default function Home({ posts }) {
