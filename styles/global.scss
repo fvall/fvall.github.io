@@ -22,6 +22,12 @@ ol {
   list-style-position: inside;
 }
 
+li > ul {
+  li {
+    margin-left: $em-space-3;
+  }
+}
+
 a {
   color: $color-text-light;
   text-decoration: none;
