@@ -51,6 +51,7 @@
       a:not(.footnote-ref):not(.footnote-backref) {
         position: relative;
         color: lighten($color-primary, 5%);
+        display: inline-block;
         &::after {
           position: absolute;
           left: 0;

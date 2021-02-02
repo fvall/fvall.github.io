@@ -13,6 +13,33 @@
       margin-bottom: $rem-space-3;
     }
 
+    main {
+      article {
+        h1 > a:not(.footnote-ref):not(.footnote-backref),
+        h2 > a:not(.footnote-ref):not(.footnote-backref),
+        h3 > a:not(.footnote-ref):not(.footnote-backref),
+        h4 > a:not(.footnote-ref):not(.footnote-backref) {
+          color: white;
+          background-color: transparent;
+          &::after {
+            content: "#";
+            font-size: min(30px, 1em);
+            color: $color-primary;
+            position: relative;
+            height: 0;
+            background-color: transparent;
+            margin-left: 0.2em;
+            opacity: 0;
+            transition: all 200ms ease;
+          }
+
+          &:hover::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
     .post-summary {
       display: flex;
       align-items: center;
