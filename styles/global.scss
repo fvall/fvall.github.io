@@ -37,6 +37,10 @@ h1 {
   font-family: $font-title;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 // @import "utils";
 @import "nav";
 @import "title";
