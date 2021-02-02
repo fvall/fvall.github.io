@@ -16,7 +16,7 @@ This is **_not_** a tutorial series on Flask itself, I am assuming the reader to
 
 Let's dive in!
 
-## Project setup
+## [Project setup](#setup) {#setup}
 
 We will be using **poetry** to manage our package dependencies. For those who are not familiar with poetry, it is an excellent package designed to make it easier to track and manage the packages we will use in this project. It is somewhat similar to virtual environments, but I find its CLI interface and the way we can identify our dependencies incredibly easy to use. If you want to read more about poetry, you can check the official [documentation](https://python-poetry.org/docs/basic-usage/).
 
@@ -43,7 +43,7 @@ If everything went in correctly, you should be prompted at the terminal to confi
 
 Once you have answered all the question, you can simply type "yes" and a `pyproject.toml` file will be created within your folder. If you see this file, you're in the right track. :+1:
 
-### Configuring poetry
+### [Configuring poetry](#poetry) {#poetry}
 
 Poetry automatically creates virtual environments for us, which is great. However, there's one thing I don't quite like about it. It creates them in a default folder, not in your project folder. If you want to inspect the environment or point your IDE to this environment (for example, if you are using VS Code), it is much easier if the environment is located in the same folder as your project.
 
@@ -154,7 +154,9 @@ and all of your dependencies will be restored. Yes, I know what you're thinking 
 
 Now that our packages are ready to be used, let's build our dashboard.
 
-## Building the dashboard
+## [Building the dashboard](#dashboard) {#dashboard}
+
+### [Creating files](#files) {#files}
 
 We will use the _Flask Application Factory_ pattern which to me is the best way to modularize our Flask application. You may be thinking: "What the hell is this?". There's a lot going on here, but to summarise you can think of that as: "let's use a function to return our application instead of using a global variable everywhere". You can read more about it [here](https://flask.palletsprojects.com/en/1.1.x/patterns/appfactories/) and [here](https://hackersandslackers.com/flask-application-factory/).
 
@@ -197,3 +199,380 @@ Here's how my folder structure looks like.
     Application's folder structure
 </figcaption>
 </figure>
+
+Alright, time to start adding some HTML. Let's create our template in the `index.html` file.
+
+<figure>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask Dashboard</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+  </head>
+  <body>
+    <h1>Financial Dashboard</h1>
+    <br />
+  </body>
+</html>
+```
+
+<figcaption>
+    index.html
+</figcaption>
+</figure>
+
+As you can see, it is a very simple HTML file. The only thing we are doing is linking to our stylesheet. Let's create that one now.
+
+<figure>
+
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-1: #00153d;
+  --color-2: #e0ebff;
+  --color-3: #182c52;
+  --background-color: var(--color-1);
+  --text-color: var(--color-2);
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+p,
+h1,
+h2 {
+  color: var(--text-color);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  color: var(--text-color);
+}
+```
+
+<figcaption>
+    styles.css
+</figcaption>
+</figure>
+
+Again, nothing special here. We first reset the css styles, define some css variables with colours and apply those colours to our HTML elements. To make things look nicer for our table, I am defining the property **border-collapse** as false.
+
+Next, we will add our Flask routes to our application.
+
+<figure>
+
+```python
+from flask import current_app, render_template
+app = current_app
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+```
+
+<figcaption>
+    index.py
+</figcaption>
+</figure>
+
+This file points our application to the route "/" which should be our default. This file is also very simple, we are simply rendering our HTML template that we defined previously. However, there is one thing which may not be familiar - what's the deal with this `current_app` variable? It turns out, this is a _proxy_ within Flask's [Application Context](https://flask.palletsprojects.com/en/1.1.x/appcontext/). This will allow us to refer to our Flask app using our application factory pattern. In the code above, we are simply saying "_treat the variable app as the Flask application object_".
+
+We also need to build the entry point for our application. We will do this in the \_\_init\_\_.py file.
+
+<figure>
+
+```python
+from flask import Flask
+
+def create_app():
+
+    app = Flask(__name__)
+    with app.app_context():
+
+        from . import index
+        return app
+
+```
+
+<figcaption>
+    __init__.py
+</figcaption>
+</figure>
+
+Ok, this is a bit weird. We are defining a _function_ which will return our app. However we need to make our app aware of the route we defined in index.py. We do this by importing the file **_within_** Flask's application context (note I used relative imports there). This is crucial as our `current_app` we created in index.py only works within the application context. By importing the file, Python executes its code and it will register the route to our app, since we used its proxy to define our home page route.
+
+You may be asking, "ok I understand, by why would I do this when I can simply define the route based on my actual Flask app variable as in here?"
+
+```python
+
+  app = Flask(__name__)
+
+```
+
+Yes you could and this would be fine for small projects. However, as your project grows you may want to add new features and you may want to organize them into different files. Here's where the beauty of the application factory shines. If you want to add a new feature, you just need to follow these steps:
+
+1. Create a new file with your super duper cool functionality
+2. Make sure to import the Flask's proxy and use it to define the new routes
+3. In the \_\_init\_\_.py file, just **import** the file within the application context
+
+This can be a bit hard to sync in the first time, I sure had to give it some time to get my head around it. If you want to read more about it, I would highly recommend the links I mentioned above about the application factory.
+
+Finally, we need to define the entry point of our application. This will go in the main.py file. Since we already split most of the logic into the other files, this one is pretty simple.
+
+<figure>
+
+```python
+from app import create_app
+
+app = create_app()
+
+if __name__ == "__main__":
+    app.run(host = "0.0.0.0", debug = True)
+```
+
+<figcaption>
+    __init__.py
+</figcaption>
+</figure>
+
+Here we import our function, create our application and execute it. Time to see how our dashboard is looking like. :v:
+
+### [Running the application](#run-app) {#run-app}
+
+Because we are using poetry, we can run our application in two ways. In the terminal you can use either of these commands.
+
+<figure>
+
+```bash
+python main.py            # use this if the virtual environment is activated
+poetry run python main.py # use this if the virtual environment is not activated
+```
+
+<figcaption>
+    Running our dashboard
+</figcaption>
+</figure>
+
+If everything went in correctly, you should be able to see our dashboard in `localhost:3000` in your browser.
+
+<div className="flask-dashboard" style="background-color:#00153D; padding:10px; padding-bottom:40px">
+    <h1 style="font-family:Times; color:#E0EBFF">
+        Financial Dashboard
+    </h1>
+</div>
+
+That's probably the most boring dashboard ever created, at least it has some color :smile:. Time to make it interesting.
+
+## [Adding data](#data) {#data}
+
+### [Table](#data-table) {#data-table}
+
+First thing we can do to improve our dashboard is to add some data to it. Let's create a table in our data.py file. If you need to refresh where this file should be, have a look at the folder structure above.
+
+<figure>
+
+```python
+import numpy as np
+import pandas as pd
+import datetime
+
+
+def fake_data():
+
+    """
+    Generate fake data for testing
+    """
+
+    symbols = ["ABC", "DEF", "GHI", "JKL", "MNO"]
+    prices = pd.DataFrame(
+        np.random.rand(10, len(symbols)) * 100,
+        columns = symbols
+    )
+
+    today = datetime.date.today()
+    prices.index = pd.DatetimeIndex(
+        pd.date_range(today, periods = prices.shape[0], freq = "1D")
+    )
+
+    return prices
+```
+
+<figcaption>
+    data.py - fake data
+</figcaption>
+</figure>
+
+The table above generates some fake data (if not entirely clear from the name of the function 🙄) mimicking price data for financial securities. We will pump in some actual data in the next part of this series. For now, this will do just fine.
+
+By default tables don't look very nice in HTML. Luckily pandas makes it very easy to add our custom styles to our tables. We need to pass a list of dictionaries. Each dictionary must have:
+
+- selector: this where we target the css selectors
+- props: the css properties we want to alter
+
+For example the code below adds a bit of styling to our table. Note that I am importing the util.py file with a function called `css_variables`. We will take care of this in a second. Just add this piece of code to our data.py file.
+
+<figure>
+
+```python
+from .util import css_variables
+
+def format_data_frame(df):
+
+    css = css_variables()
+
+    def hover(hover_color = "#ffff99", text_color = "black"):
+        return [
+            dict(
+                selector = "tr:hover",
+                props = [
+                    ("background-color", "%s" % hover_color),
+                    ("color", text_color)
+                ]
+            ),
+            dict(
+                selector = "tr:hover > td",
+                props = [
+                    ("background-color", "%s" % hover_color),
+                    ("color", text_color)
+                ]
+            ),
+            dict(
+                selector = "tr:hover > th",
+                props = [
+                    ("background-color", "%s" % hover_color),
+                    ("color", text_color)
+                ]
+            ),
+        ]
+
+    styles = [
+        dict(
+            selector = "th",
+            props = [
+                ("padding", "2px 5px"),
+                ("text-align", "center"),
+                ("border-top", "solid 1px"),
+                ("border-bottom", "solid 1px"),
+                ("color", "white"),
+            ]
+        ),
+        dict(
+            selector = "td",
+            props = [
+                ("padding", "2px 5px"),
+                ("text-align", "center"),
+                ("font-size", "0.8rem"),
+            ]
+        ),
+        dict(
+            selector = "tr:nth-child(even)",
+            props = [
+                ("background-color", css['color_3'])
+            ]
+        ),
+        *hover(css["color_2"], css['color_1'])
+    ]
+
+    return (
+        df
+        .style
+        .set_table_styles(styles)
+        .hide_index()
+    )
+```
+
+<figcaption>
+    data.py - table formatting
+</figcaption>
+</figure>
+
+To use the styles, we call the style property within pandas DataFrame and set the table styles. In this particular case, I am not interested in displaying the index, so I am hiding it in the end but you could leave it if you want to.
+
+Let's create those css styles in util.py
+
+### [CSS styles](#css) {#css}
+
+One issue which I faced was that I wanted to reuse the code from my css stylesheet but I could just not find a easy way to do it. Then I realised I could define css variables and try to come up with a Regex to extract those css variables. This would allow me to reuse the colors I defined in my css in my Python code without having to copy and paste it. Here's the final version of the Regex. I usually test my regular expressions in [regex101.com](https://regex101.com/) because I came to realise my first regex is always wrong...
+
+<figure>
+
+```python
+import re
+import os
+from itertools import chain
+
+loc = os.path.dirname(os.path.abspath(__file__))
+
+
+def css_variables():
+
+    with open(os.path.join(loc, 'static', 'styles.css'), "r") as f:
+        css = f.read()
+
+    var = re.search(r':root\s?\n?{[\w\s\n)(:#;-]*}', css)
+    if var is None:
+        raise ValueError("Cannot extract css variables")
+
+    var = var.group()
+    var = [v.strip() for v in var.split("\n") if v.strip().startswith("--")]
+    var = [v.split(";") for v in var]
+    var = [v.strip() for v in chain.from_iterable(var) if v.strip().startswith("--")]
+
+    output = dict()
+    for v in var:
+        key, val = v.split(":")
+        key = key[2:].replace("-", "_").strip()
+        val = val.strip()
+        output[key] = val
+
+    return output
+
+```
+
+<figcaption>
+    util.py
+</figcaption>
+</figure>
+
+The regular expression extracts all variables within `:root` and creates a dictionary with their names and properties. I adopted the convention to change dashes into underscores, but you may wish not to do so. With this function we can simply access our css variables in Python easily.
+
+<figure>
+
+```css
+  var(--color-1);
+```
+
+<figcaption>
+    In CSS
+</figcaption>
+</figure>
+<br>
+<figure>
+
+```python
+  css = css_variables()
+  css['color_1']
+```
+
+<figcaption>
+    In Python
+</figcaption>
+</figure>
+
+### [Creating a chart](#chart) {#chart}
+
+A financial dashboard is not complete without at least one chart.
