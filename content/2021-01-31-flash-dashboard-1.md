@@ -158,7 +158,7 @@ Now that our packages are ready to be used, let's build our dashboard.
 
 ### [Creating files](#files) {#files}
 
-We will use the _Flask Application Factory_ pattern which to me is the best way to modularize our Flask application. You may be thinking: "What the hell is this?". There's a lot going on here, but to summarise you can think of that as: "let's use a function to return our application instead of using a global variable everywhere". You can read more about it [here](https://flask.palletsprojects.com/en/1.1.x/patterns/appfactories/) and [here](https://hackersandslackers.com/flask-application-factory/).
+We will use the _Flask Application Factory_ pattern which to me is the best way to modularize our Flask application. You may be thinking: \"What the hell is this?\". There's a lot going on here, but to summarise you can think of that as: "let's use a function to return our application instead of using a global variable everywhere". You can read more about it in Flask's official [documentation](https://flask.palletsprojects.com/en/1.1.x/patterns/appfactories/) or in this [post](https://hackersandslackers.com/flask-application-factory/).
 
 The main idea is to decouple the implementation of our application from the pages which compose our application. If down the line we have a great idea and would like to add to our dashboard, we should not need to rewrite the whole application. We need to be able to code the new feature in isolation and apply it to our dashboard without breaking any existing functionality. The Application Factory pattern allows us to do exactly that.
 
@@ -379,7 +379,7 @@ That's probably the most boring dashboard ever created, at least it has some col
 
 ## [Adding data](#data) {#data}
 
-### [Table](#data-table) {#data-table}
+### ["Price" table](#data-table) {#data-table}
 
 First thing we can do to improve our dashboard is to add some data to it. Let's create a table in our data.py file. If you need to refresh where this file should be, have a look at the folder structure above.
 
@@ -560,7 +560,9 @@ The regular expression extracts all variables within `:root` and creates a dicti
     In CSS
 </figcaption>
 </figure>
+
 <br>
+
 <figure>
 
 ```python
@@ -575,4 +577,225 @@ The regular expression extracts all variables within `:root` and creates a dicti
 
 ### [Creating a chart](#chart) {#chart}
 
-A financial dashboard is not complete without at least one chart.
+A financial dashboard is not complete without at least one chart. We will use matplotlib to create our chart based on the data from the table we built above. Creating the chart it is not the hardest part, the issue is displaying that chart in the browser. Here's our function that creates the chart. In this example, we are calculating the cumulative return of the price table (with fake data). We accomplish this with the following steps:
+
+1. we sort our data by date
+2. compute the log price
+3. compute the difference of the log prices, which produces the [log-return](https://en.wikipedia.org/wiki/Rate_of_return#Logarithmic_or_continuously_compounded_return)
+4. compute the cumulative return
+5. convert log-returns back to relative returns
+
+<p></p>
+
+<figure>
+
+```python
+def plot(prices):
+
+    prices = (
+        prices
+        .sort_index()
+        .apply(np.log)
+        .diff()
+        .fillna(0.0)
+        .cumsum()
+        .apply(np.exp)
+    )
+
+    return prices.plot()
+```
+
+<figcaption>
+    plot function
+</figcaption>
+</figure>
+
+Cool, now on the tricky part. Actually, there is no trick at all, it is straightforward _as long as_ you know you can export matplotlib charts to SVGs. I did not know that, but once I discovered this everything became simple. The only thing we need to do is to send a SVG to the browser as our chart. We can do this by storing the chart as a bytes, and finally we send the decoded SVG text to the browser.
+
+<figure>
+
+```python
+def export_svg(chart):
+    output = BytesIO()
+    chart.get_figure().savefig(output, format = "svg")
+    return output
+```
+
+<figcaption>
+    export chart function
+</figcaption>
+</figure>
+
+Now we need to update our index.py file to accept the our table and our chart. The complete version looks like this. Note that we need to explicitly tell matplotlib to use the **Agg** backend here otherwise our export to SVG may not work correctly. I also added a function which it styles our chart in the code below. It just applies our css styles to our chart.
+
+<figure>
+
+```python
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+from flask import current_app, render_template
+from .data import fake_data, format_data_frame
+from .util import css_variables
+from io import BytesIO
+
+app = current_app
+matplotlib.use('Agg')
+
+
+def plot(prices):
+
+    prices = (
+        prices
+        .sort_index()
+        .apply(np.log)
+        .diff()
+        .fillna(0.0)
+        .cumsum()
+        .apply(np.exp)
+    )
+
+    return prices.plot()
+
+
+def export_svg(chart):
+    output = BytesIO()
+    chart.get_figure().savefig(output, format = "svg")
+    return output
+
+
+def customize_chart(chart):
+    fig = plt.gcf()
+    css = css_variables()
+
+    fig.set_facecolor(css['color_1'])
+    chart.set_xlabel(None)
+    chart.set_ylabel("Cumulative return", color = css['color_2'])
+    chart.tick_params(color = css['color_2'], labelcolor = css['color_2'], which = "both")
+    chart.set_facecolor(css['color_1'])
+    for s in chart.spines:
+        chart.spines[s].set_color(css['color_2'])
+
+    return chart
+
+
+@app.route("/")
+def home():
+
+    df = fake_data()
+    _plot = plot(fake_data())
+    _plot = customize_chart(_plot)
+
+    try:
+        chart = export_svg(_plot)
+    finally:
+        plt.close() # - close matplotlib window as the chart is already saved in bytes obj
+
+    return render_template(
+        "index.html",
+        prices = format_data_frame(df).render(),
+        chart = chart.getvalue().decode('utf8')
+    )
+```
+
+<figcaption>
+    index.py - revised
+</figcaption>
+</figure>
+
+### [Updating our template](#update-template) {#update-template}
+
+Once you update the code in index.py, the code will crash unless we update our index.html template. After all, we did not specify parameters there, it does not know how to handle the price and chart parameters. Let's fix that.
+
+<figure>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask Dashboard</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+  </head>
+  <body>
+    <h1>Financial Dashboard</h1>
+    <br />
+    {{prices}}
+    <br />
+    <h1>Chart</h1>
+    {{chart}}
+  </body>
+</html>
+```
+
+<figcaption>
+    index.html - revised
+</figcaption>
+</figure>
+
+Now we if reload our application, we should be able to see our table and chart. Note that you may need to rerun your Flask app in case it crashed because the template had not been updated. This is how our dashboard looks right now.
+
+<div className="flask-dashboard" style="background-color:#00153D; padding:10px; padding-bottom:40px">
+    <h1 style="font-family:Times; color:#E0EBFF">
+        Financial Dashboard
+    </h1>
+    <br/>
+    &lt;style  type=&#34;text/css&#34; &gt;
+    #T_560c4_ th {
+          padding: 2px 5px;
+          text-align: center;
+          border-top: solid 1px;
+          border-bottom: solid 1px;
+          color: white;
+    }
+    <br/>
+    <br/>
+    ...
+    and a lot more of HTML ...
+</div>
+
+Flask did not display the table nor the chart!
+
+Instead, it displayed the raw HTML. By default [Jinja](https://jinja.palletsprojects.com/), which powers Flask's templates, escapes the HTML by default. Adding raw HTML to our app can cause security vulnerabilities, that's why Jinja escapes HTML by default. It puts safety first, which is not a bad default if you aske me. In order to use the HTML pandas and matplotlib generate, we must tell Jinja it is ok not to escape that code. In this case we know it is ok since the HTML is being generated by us. If you are building an application that accepts HTML in which you cannot guarantee it is safe HTML, you should **_strongly_** consider escaping that HTML.
+
+To do this, we pass the **_safe_** flag to our variables. After the template is updated, you should be prompted with the dashboard, now working correctly.
+
+<figure>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flask Dashboard</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+  </head>
+  <body>
+    <h1>Financial Dashboard</h1>
+    <br />
+    {{prices | safe}}
+    <br />
+    <h1>Chart</h1>
+    {{chart | safe}}
+  </body>
+</html>
+```
+
+<figcaption>
+    index.html - final
+</figcaption>
+</figure>
+
+## [The Dashboard](#dashboard-final) {#dashboard-final}
+
+If you made it this far, congratulations. We have now our own dashboard built with Flask, pandas and matplotlib. The dashboard looks alright, but at the moment is not very useful since we only used fake data. In the next part of this series, we will source actual market data and pipe it to our dashboard. If you followed along like me, you dashboard should be looking like this. Note that the data is currently random, so your numbers and chart will look a bit different.
+
+<img src="https://ch3301files.storage.live.com/y4mVFXjYbOeI5dMUFAUeI062Rle4X0dkrkZRGHH6Y45B7PnLWHaGox2s6t5gQhasZLgmKnfMFgOBeW5t-MkMqA4YMo0baqyCgsDxFO7INf16ontOQbJnCLFjFXauh8wioB6wX8Qfkzdtui5usO3klqm9oEyoho0_gpOnhAJQ_xqo3m7rPDJ_EIIh_Ku3ZnEoPgB?width=1280&height=1584&cropmode=none" alt="final-dashboard"/>
+
+There was a lot to cover in this part. If you felt a bit lost or if something did not work as you expected, you can check out this repository where you can see the finish project. If you want to see how part 1 of the series finished (this post) without getting overwhelmed with next parts for this series, you can check out the branch _part1_ in the repo. It contains code only up until the end of this post.
+
+Until next time. :rocket:
+
+---

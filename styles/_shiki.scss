@@ -50,13 +50,13 @@ pre {
 
 @media screen and (max-width: $breakpoint-sm) {
   pre {
-    margin: 0.5em -2rem;
+    margin: 0.5em -3rem;
     border-radius: 0;
   }
 
   figure pre + figcaption {
-    width: calc(100% + 2rem * 2);
-    margin: 0 -2rem;
+    width: calc(100% + 3rem * 2);
+    margin: 0 -3rem;
   }
 }
 

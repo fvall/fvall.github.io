@@ -65,6 +65,11 @@
     }
     .post-content {
       margin-top: $space-5 * 2;
+
+      p {
+        text-align: justify;
+      }
+
       img {
         margin: $space-2 0rem;
         width: 100%;
