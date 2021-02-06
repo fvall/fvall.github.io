@@ -16,7 +16,7 @@ Please note, this is **_not_** a tutorial series on Flask itself. I am assuming 
 
 Let's dive in!
 
-## [Project setup](#setup) {#setup}
+## Project setup [#](#setup) {#setup}
 
 We will be using **poetry** to manage our package dependencies. For those who are not familiar with poetry, it is an excellent package designed to make it easier to track and manage the packages we will use in this project. It is somewhat similar to virtual environments, but I find its CLI interface and the way we can identify our dependencies incredibly easy to use. If you want to read more about poetry, you can check out the official [documentation](https://python-poetry.org/docs/basic-usage/).
 
@@ -43,7 +43,7 @@ If everything occurred correctly, you should be prompted at the terminal to conf
 
 Once you have answered all the question, you can simply type "yes" and a `pyproject.toml` file will be created within your folder. If you see this file, you're in the right track. :+1:
 
-### [Configuring poetry](#poetry) {#poetry}
+### Configuring poetry [#](#poetry) {#poetry}
 
 Poetry automatically creates virtual environments for us, which is great. However, there's one thing I don't quite like about it. It creates them in a default folder, not in your project folder. If you want to inspect the environment or point your IDE to this environment (for example, if you are using VS Code), it is much easier if the environment is located in the same folder as your project.
 
@@ -154,9 +154,9 @@ and all of your dependencies will be restored. Yes, I know what you're thinking 
 
 Now that our packages are ready to be used, let's build our dashboard.
 
-## [Building the dashboard](#dashboard) {#dashboard}
+## Building the dashboard [#](#dashboard) {#dashboard}
 
-### [Creating files](#files) {#files}
+### Creating files [#](#files) {#files}
 
 We will use the _Flask Application Factory_ pattern which to me is the best way to modularize our Flask application. You may be thinking: \"What the hell is this?\". A lot is going on here, but to summarise you can think of that as: "let's use a function to return our application instead of using a global variable everywhere". You can read more about it in Flask's official [documentation](https://flask.palletsprojects.com/en/1.1.x/patterns/appfactories/) or in this [post](https://hackersandslackers.com/flask-application-factory/).
 
@@ -351,7 +351,7 @@ if __name__ == "__main__":
 
 Here we import our function, create our application and execute it. Time to see how our dashboard is looking like. :v:
 
-### [Running the application](#run-app) {#run-app}
+### Running the application [#](#run-app) {#run-app}
 
 Because we are using poetry, we can run our application in two ways. In the terminal, you can use either of these commands.
 
@@ -377,9 +377,9 @@ Now you should be able to see our dashboard in `localhost:3000` in your browser.
 
 That's probably the most boring dashboard ever created, at least it has some colour:smile:. Time to make it interesting.
 
-## [Adding data](#data) {#data}
+## Adding data [#](#data) {#data}
 
-### ["Price" table](#data-table) {#data-table}
+### "Price" table [#](#data-table) {#data-table}
 
 The first thing we can do to improve our dashboard is to add some data to it. Let's create a table in our data.py file. If you need to refresh where this file should be, have a look at the folder structure above.
 
@@ -504,7 +504,7 @@ To use the styles, we call the style property within pandas DataFrame and set th
 
 Let's create those CSS styles in util.py
 
-### [CSS styles](#css) {#css}
+### CSS styles [#](#css) {#css}
 
 One issue which I faced was that I wanted to reuse the code from my CSS stylesheet but I could just not find an easy way to do it. Then I realised I could define CSS variables and try to come up with a Regex to extract those CSS variables. This would allow me to reuse the colours I defined in my CSS in my Python code without having to copy and paste it. Here's the final version of the Regex. I usually test my regular expressions in [regex101.com](https://regex101.com/) because I came to realise my first regex is always wrong...
 
@@ -575,7 +575,7 @@ The regular expression extracts all variables within `:root` and creates a dicti
 </figcaption>
 </figure>
 
-### [Creating a chart](#chart) {#chart}
+### Creating a chart [#](#chart) {#chart}
 
 A financial dashboard is not complete without at least one chart. We will use matplotlib to create our chart based on the data from the table we built above. Creating the chart it is not the hardest part, the issue is displaying that chart in the browser. Here's our function that creates the chart. In this example, we are calculating the cumulative return of the price table (with fake data). We accomplish this with the following steps:
 
@@ -703,7 +703,7 @@ def home():
 </figcaption>
 </figure>
 
-### [Updating our template](#update-template) {#update-template}
+### Updating our template [#](#update-template) {#update-template}
 
 Once you update the code in index.py, the code will crash unless we update our index.html template. After all, we did not specify any parameters there. It does not know how to handle the price and chart parameters. Let's fix that.
 
@@ -788,7 +788,7 @@ To do this, we pass the **_safe_** flag to our variables. After the template is 
 </figcaption>
 </figure>
 
-## [The Dashboard](#dashboard-final) {#dashboard-final}
+## The Dashboard [#](#dashboard-final) {#dashboard-final}
 
 If you made it this far, congratulations. We now have our own dashboard built with Flask, pandas and matplotlib. The dashboard looks alright, but at the moment is not very useful since we only used fake data. In the next part of this series, we will source actual market data and pipe it to our dashboard. If you followed along like me, your dashboard should be looking like this. Note that the data is currently random, so your numbers and chart will look a bit different.
 
