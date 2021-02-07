@@ -15,7 +15,7 @@ export default function PostList({ posts }) {
 function PostCard({ post, key }) {
   return (
     <div className="post-card" key={key}>
-      <Link href={`/blog/${post.slug[0]}/${post.slug[1]}`}>
+      <Link href={`/blog/${post.slug[0]}`}>
         <a>
           <div className="card-header">
             <Title title={post.title} />
