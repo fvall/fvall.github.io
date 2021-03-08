@@ -1,0 +1,125 @@
+#hero-intro {
+  font-size: 40px;
+  font-family: "Spartan";
+}
+
+#hero-desc {
+  font-size: 16px;
+}
+
+#cv-link {
+  text-align: center;
+  background-color: $color-primary;
+  margin: auto auto 10vh auto;
+  border-radius: 10px;
+  width: 20ch;
+  height: 5ch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.professional {
+  font-family: "Montserrat", "Helvetica", sans-serif;
+  font-size: 14px;
+
+  nav {
+    font-family: "Spartan";
+  }
+
+  .prof-section-title {
+    h2 {
+      font-family: "Spartan", "Helvetica", sans-serif;
+      font-size: 32px;
+    }
+    margin: 0 auto;
+    padding: 1ch 0;
+  }
+
+  .prof-sections {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .prof-section {
+    height: max(450px, min(75vh, 600px));
+    // height: 100vh;
+    width: 100%;
+    padding: 50px 80px;
+  }
+
+  .prof-hero {
+    display: flex;
+
+    .hero-left {
+      max-width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-right {
+      min-width: 50%;
+      min-height: 100%;
+      position: relative;
+      img {
+        position: absolute;
+        margin: auto;
+        top: calc(50% - 100px);
+        left: calc(50% - 100px);
+        object-fit: cover;
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+      }
+    }
+  }
+  .prof-about {
+    background-color: cornflowerblue;
+  }
+  .prof-skills {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 12px;
+    .skills {
+      display: flex;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      h4 {
+        text-align: center;
+        margin-bottom: 1ch;
+        font-size: 14px;
+        font-weight: bold;
+        // color: $color-primary;
+      }
+
+      .skill {
+        padding: 8ch 5ch;
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+        max-width: calc(100% / 3);
+        // margin: 0 auto;
+        .icon {
+          margin: auto;
+          padding-bottom: 2ch;
+        }
+      }
+    }
+  }
+  .prof-projects {
+    background-color: paleturquoise;
+  }
+}
