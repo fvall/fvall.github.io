@@ -7,10 +7,7 @@ export default function Nav() {
       <div className="links">
         <ul>
           <li>
-            <Link href="/professional/about/">About</Link>
-          </li>
-          <li>
-            <Link href="/professional/skills/">Skills</Link>
+            <Link href="/professional/cv/">CV</Link>
           </li>
           <li>
             <Link href="/professional/projects/">Projects</Link>
