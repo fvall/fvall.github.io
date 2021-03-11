@@ -1,0 +1,157 @@
+.professional {
+  .cv {
+    max-width: $breakpoint-lg * 1.2;
+    margin: 0 auto;
+    padding: $rem-space-6 $rem-space-10;
+
+    h1 {
+      font-size: var(--font-size-2xl);
+    }
+
+    .content-title {
+      margin-top: $rem-space-8;
+      margin-bottom: $rem-space-8;
+    }
+
+    .cv-entry {
+      margin: $rem-space-10 0;
+      padding: 0 $rem-space-6;
+
+      li {
+        font-size: var(--font-size-xs);
+        padding-bottom: $em-space-1 / 2;
+      }
+
+      ul > ul {
+        li {
+          margin-left: $em-space-2;
+        }
+      }
+
+      .line {
+        width: 100%;
+        height: 1px;
+        background-color: desaturate(#00959e, 40);
+        margin: auto 8px;
+      }
+
+      .title {
+        font-size: var(--font-size-lg);
+        // margin-bottom: $rem-space-1;
+      }
+
+      .role {
+        font-size: var(--font-size-md);
+        font-family: "Montserrat", "Segoe UI", Tahoma, Geneva, Verdana,
+          sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        margin-bottom: $rem-space-3;
+        color: darken(desaturate($color-primary, 15), 10);
+      }
+
+      .company {
+        margin-top: $em-space-2;
+      }
+
+      h3 {
+        font-size: var(--font-size-md);
+        margin-bottom: $rem-space-1;
+      }
+      h4 {
+        font-size: var(--font-size-xs);
+        margin-bottom: $rem-space-1;
+      }
+
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      grid-template-rows: 1fr;
+
+      .location,
+      .period {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: 1fr;
+        align-items: center;
+        justify-items: center;
+        max-width: $breakpoint-sm / 2;
+        gap: 0 8px;
+      }
+
+      .right {
+        margin-left: $rem-space-10;
+        padding-top: $rem-space-2;
+        ul {
+          list-style: none; /* Remove default bullets */
+          margin-left: 1em;
+        }
+
+        ul li::before {
+          content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+          color: $color-primary; /* Change the color */
+          font-weight: bold; /* If you want it to be bold */
+          display: inline-block; /* Needed to add space between the bullet and the text */
+          width: 1em; /* Also needed for space (tweak if needed) */
+          margin-left: -1em; /* Also needed for space (tweak if needed) */
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .professional {
+    .cv {
+      padding: $rem-space-4 $rem-space-6;
+      .cv-entry {
+        grid-template-columns: 1fr;
+        margin: $rem-space-8 0;
+        li {
+          padding-bottom: $em-space-1;
+        }
+
+        .title,
+        .role {
+          text-align: center;
+        }
+        .title {
+          font-size: calc(var(--font-size-xl) * 0.9);
+        }
+
+        .company {
+          margin-top: $em-space-2;
+          text-align: center;
+        }
+
+        .location,
+        .period {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .left {
+          margin-left: auto;
+          margin-right: auto;
+          width: 80%;
+        }
+        .right {
+          margin-left: $rem-space-4;
+          margin-top: $rem-space-3;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .professional {
+    .cv {
+      padding: $rem-space-4 $rem-space-4;
+      .cv-entry {
+        .right {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

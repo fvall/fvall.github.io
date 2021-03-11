@@ -47,7 +47,7 @@ nav {
   .social-media {
     display: flex;
     li {
-      padding: 0rem $space-1;
+      padding: 0rem $space-1 * 1.5;
     }
     svg {
       transition: 0.35s ease-out;
@@ -67,5 +67,16 @@ nav {
 @media screen and (max-width: $breakpoint-xs) {
   nav {
     padding: $space-2 $em-space-3;
+    .social-media {
+      li {
+        padding: 0rem $space-1;
+      }
+    }
+
+    .links {
+      li {
+        padding-right: $space-2;
+      }
+    }
   }
 }
