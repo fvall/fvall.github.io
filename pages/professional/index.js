@@ -23,7 +23,7 @@ export default function ProfessionalHome() {
         <About />
         <Skills />
         <Projects />
-        <Contact />
+        {/* <Contact /> */}
       </Sections>
     </div>
   );

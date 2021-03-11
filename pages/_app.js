@@ -7,6 +7,7 @@ import {
   faSquareRootAlt,
   faLaptopCode,
   faFileInvoiceDollar,
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { faClock, faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
 
@@ -20,7 +21,8 @@ library.add(
   faCalendarAlt,
   faSquareRootAlt,
   faLaptopCode,
-  faFileInvoiceDollar
+  faFileInvoiceDollar,
+  faEnvelope
 );
 
 export default function App({ Component, pageProps }) {

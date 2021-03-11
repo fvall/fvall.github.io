@@ -7,13 +7,16 @@ export default function Nav() {
       <div className="links">
         <ul>
           <li>
-            <Link href="/professional/cv/">CV</Link>
+            <Link href="/professional/">About</Link>
+          </li>
+          <li>
+            <Link href="/professional/cv/">Experience</Link>
           </li>
           <li>
             <Link href="/professional/projects/">Projects</Link>
           </li>
           <li>
-            <Link href="/professional/contact/">Contact</Link>
+            <Link href="/blog/">Blog</Link>
           </li>
         </ul>
       </div>
@@ -37,6 +40,11 @@ export default function Nav() {
               rel="noopener"
             >
               <FontAwesomeIcon icon={["fab", "linkedin"]} size="2x" />
+            </a>
+          </li>
+          <li>
+            <a href="mailto:felipe.valladao@gmail.com" aria-label="email">
+              <FontAwesomeIcon icon={["fa", "envelope"]} size="2x" />
             </a>
           </li>
         </ul>
