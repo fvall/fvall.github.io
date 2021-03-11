@@ -4,8 +4,73 @@
     margin: 0 auto;
     padding: $rem-space-6 $rem-space-10;
 
+    ul {
+      list-style: none; /* Remove default bullets */
+      margin-left: 1em;
+    }
+
+    ul li::before {
+      content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: $color-primary; /* Change the color */
+      font-weight: bold; /* If you want it to be bold */
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 1em; /* Also needed for space (tweak if needed) */
+      margin-left: -1em; /* Also needed for space (tweak if needed) */
+    }
+
     h1 {
       font-size: var(--font-size-2xl);
+    }
+
+    .name {
+      font-family: Montserrat, Helvetica, sans-serif;
+      font-size: var(--font-size-2xl);
+      text-align: center;
+      margin: 1em 0 2em 0;
+    }
+
+    .skill-list {
+      margin: $rem-space-10 $rem-space-6;
+    }
+
+    .skill-section {
+      font-size: var(--font-size-lg);
+      margin-bottom: 0.8em;
+      text-align: center;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(23ch, 1fr));
+      grid-template-rows: auto;
+      align-items: center;
+      justify-items: center;
+      max-width: $breakpoint-md;
+      margin: 0 auto;
+      margin-bottom: 8rem;
+      margin-top: 4rem;
+    }
+
+    .skill {
+      max-width: 300px;
+      display: grid;
+      grid-template-columns: 12ch 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      padding: 0 1em;
+    }
+
+    .skill-name {
+      font-size: var(--font-size-xs);
+      font-weight: 400;
+    }
+
+    .skill-level {
+      width: 1.8rem;
+      height: 1.8rem;
+      fill: desaturate($color-primary, 20);
+      stroke: $color-primary;
+      stroke-width: 3px;
+      padding: 0.2em;
     }
 
     .content-title {
@@ -81,20 +146,11 @@
       .right {
         margin-left: $rem-space-10;
         padding-top: $rem-space-2;
-        ul {
-          list-style: none; /* Remove default bullets */
-          margin-left: 1em;
-        }
-
-        ul li::before {
-          content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-          color: $color-primary; /* Change the color */
-          font-weight: bold; /* If you want it to be bold */
-          display: inline-block; /* Needed to add space between the bullet and the text */
-          width: 1em; /* Also needed for space (tweak if needed) */
-          margin-left: -1em; /* Also needed for space (tweak if needed) */
-        }
       }
+    }
+
+    .credentials {
+      margin-left: 4rem;
     }
   }
 }
@@ -139,6 +195,20 @@
           margin-top: $rem-space-3;
         }
       }
+
+      .skill-section {
+        margin-bottom: 0.5em;
+      }
+
+      .skills {
+        margin-top: 3rem;
+        margin-bottom: 6rem;
+      }
+
+      .skill-list {
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
     }
   }
 }
@@ -151,6 +221,14 @@
         .right {
           margin-left: 0;
         }
+      }
+
+      .skill-list {
+        margin: 3rem 2rem;
+      }
+
+      .skills {
+        margin-bottom: 4rem;
       }
     }
   }
