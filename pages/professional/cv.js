@@ -14,6 +14,7 @@ export default function CV() {
       </Head>
       <Nav />
       <div className="cv">
+        <h1 className="name">Felipe de Souza Valladão, CFA</h1>
         <Group title="Experience">
           <Entry
             position={"Risk Analyst"}
@@ -25,6 +26,14 @@ export default function CV() {
             to={"Present"}
           >
             <ul>
+              <li>Lead the development of Risk's Python related projects</li>
+              <li>
+                Develop and maintain in-house Risk's models, reports and tools
+                (Python/SQL)
+              </li>
+              <li>
+                Assist trading with capital allocation optimization enquiries
+              </li>
               <li>
                 Monitor daily trading activity to ensure the desks are operating
                 within limits
@@ -32,14 +41,6 @@ export default function CV() {
               <li>
                 Review and approve, where appropriate, limit requests from the
                 trading desks
-              </li>
-              <li>
-                Assist trading with capital allocation optimization enquiries
-              </li>
-              <li>Lead the development of Risk's Python related projects</li>
-              <li>
-                Develop and maintain in-house Risk's models, reports and tools
-                (Python/SQL)
               </li>
               <li>Execute FX hedges to manage balance sheet exposures</li>
               <li>Monitor daily regulatory reports and their limits</li>
@@ -175,9 +176,13 @@ export default function CV() {
             </ul>
           </Entry>
         </Group>
-        <Group title="Certifications">
-          <p>Something here</p>
-        </Group>
+        {/* <Group title="Certifications">
+          <div className="credentials">
+            <ul>
+              <li>CFA® charterholder, CFA Institute.</li>
+            </ul>
+          </div>
+        </Group> */}
         <Group title="Education">
           <Entry
             position={"Msc in Finance"}
@@ -213,7 +218,29 @@ export default function CV() {
           </Entry>
         </Group>
         <Group title="Skills">
-          <p>Something here</p>
+          <SkillList name="Mathematics">
+            <SkillDesc name="Probability" level="4" />
+            <SkillDesc name="Time Series" level="4" />
+            <SkillDesc name="Econometrics" level="3" />
+            <SkillDesc name="Statistics" level="4" />
+            <SkillDesc name="Linear Algebra" level="4" />
+          </SkillList>
+          <SkillList name="Finance">
+            <SkillDesc name="Value at Risk" level="5" />
+            <SkillDesc name="Stress testing" level="4" />
+            <SkillDesc name="Derivatives" level="3" />
+            <SkillDesc name="Equities" level="4" />
+            <SkillDesc name="Fixed income" level="3" />
+          </SkillList>
+          <SkillList name="Programming">
+            <SkillDesc name="Python" level="5" />
+            <SkillDesc name="R" level="4" />
+            <SkillDesc name="SQL" level="3" />
+            <SkillDesc name="Excel" level="5" />
+            <SkillDesc name="VBA" level="4" />
+            <SkillDesc name="C++" level="2" />
+            <SkillDesc name="Latex" level="2" />
+          </SkillList>
         </Group>
       </div>
     </div>
@@ -252,6 +279,57 @@ function Entry({ position, role, company, country, city, from, to, children }) {
         </div>
       </div>
       <div className="right">{children}</div>
+    </div>
+  );
+}
+
+function FullSkill() {
+  return (
+    <svg
+      className="skill-level"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="50" cy="50" r="42" />
+    </svg>
+  );
+}
+
+function HollowSkill() {
+  return (
+    <svg
+      className="skill-level"
+      viewBox="0 0 100 100"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="50" cy="50" r="42" fill="none" />
+    </svg>
+  );
+}
+
+function SkillDesc({ name, level, maxLevel = 5 }) {
+  let skills = [];
+  for (let i = 1; i <= maxLevel; i++) {
+    if (i <= level) {
+      skills.push(FullSkill());
+    } else {
+      skills.push(HollowSkill());
+    }
+  }
+
+  return (
+    <div className="skill">
+      <h4 className="skill-name">{name}</h4>
+      {skills}
+    </div>
+  );
+}
+
+function SkillList({ name, children }) {
+  return (
+    <div className="skill-list">
+      <h2 className="skill-section">{name}</h2>
+      <div className="skills">{children}</div>
     </div>
   );
 }
