@@ -12,7 +12,7 @@ export default function Hero() {
           cupiditate ducimus ut vitae eveniet officiis odio dicta. Unde
           laboriosam aliquam velit facilis?
         </p>
-        <img src="/me.jpeg" alt="profile picture" />
+        <img src="https://source.unsplash.com/random" alt="profile picture" />
       </div>
     </div>
   );
