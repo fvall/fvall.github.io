@@ -21,6 +21,15 @@
   font-family: "Montserrat", "Helvetica", sans-serif;
   font-size: var(--font-size-sm);
 
+  .cv {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hidden-nav {
+    display: none;
+  }
+
   .prof-section-title {
     h2 {
       font-family: "Spartan", "Helvetica", sans-serif;
@@ -29,6 +38,17 @@
       text-align: center;
     }
     padding: 1ch 0;
+  }
+
+  nav {
+    ul {
+      align-items: center;
+    }
+    .burger {
+      div {
+        width: 0px;
+      }
+    }
   }
 
   .prof-sections {
@@ -210,6 +230,48 @@
   .professional {
     nav {
       font-size: var(--font-size-sm);
+      .links {
+        li {
+          display: none;
+        }
+      }
+
+      .burger {
+        div {
+          width: 2rem;
+        }
+      }
+    }
+
+    .hidden-nav {
+      display: block;
+      position: relative;
+      background-color: whitesmoke;
+      z-index: 0;
+      transition: height 0.3s linear;
+      overflow: hidden;
+      height: 3em;
+      ul {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        li {
+          a {
+            color: black;
+            transition: color 0.25s linear;
+            &:hover {
+              color: $color-primary;
+            }
+          }
+          align-items: center;
+          list-style: none;
+          padding: 0.5rem 1em;
+        }
+      }
+
+      &.hidden {
+        height: 0;
+      }
     }
 
     .prof-hero {

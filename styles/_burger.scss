@@ -1,0 +1,53 @@
+.burger {
+  margin: auto 0;
+  div {
+    width: 2rem;
+    height: 2px;
+    background-color: white;
+    margin: 5px 0;
+    border-radius: 5px;
+    // visibility: hidden;
+  }
+
+  div:nth-child(1) {
+    transition: background-color 0.2s ease-in-out, transform 0.3s ease;
+  }
+
+  div:nth-child(2) {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+  }
+
+  div:nth-child(3) {
+    transition: background-color 0.4s ease-in-out, transform 0.3s ease;
+  }
+
+  &:hover {
+    cursor: pointer;
+    div:nth-child(1) {
+      background-color: $color-secondary;
+    }
+
+    div:nth-child(2) {
+      background-color: $color-primary;
+    }
+
+    div:nth-child(3) {
+      background-color: $color-secondary;
+    }
+  }
+
+  &.active {
+    div:nth-child(1) {
+      transform: rotate(90deg) translateX(7px) rotate(-45deg);
+      background-color: $color-secondary;
+    }
+    div:nth-child(2) {
+      transform: rotate(-45deg);
+      background-color: $color-primary;
+    }
+    div:nth-child(3) {
+      transform: translateY(5px);
+      background-color: white;
+    }
+  }
+}
