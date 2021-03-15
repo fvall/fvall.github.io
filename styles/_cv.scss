@@ -4,6 +4,11 @@
     margin: 0 auto;
     padding: $rem-space-6 $rem-space-10;
 
+    p.profile {
+      padding: 0 $rem-space-8;
+      text-align: justify;
+    }
+
     ul {
       list-style: none; /* Remove default bullets */
       margin-left: 1em;
@@ -84,12 +89,16 @@
 
       li {
         font-size: var(--font-size-xs);
-        padding-bottom: $em-space-1 / 2;
+        padding-bottom: $em-space-1;
       }
 
-      ul > ul {
-        li {
-          margin-left: $em-space-2;
+      ul {
+        ul {
+          margin: 0.25em 0 0.5em 0;
+          li {
+            margin-left: $em-space-2;
+            padding-bottom: 0;
+          }
         }
       }
 
@@ -221,6 +230,11 @@
         .right {
           margin-left: 0;
         }
+      }
+
+      p.profile {
+        padding: 0 $rem-space-6;
+        font-size: var(--font-size-xs);
       }
 
       .skill-list {
