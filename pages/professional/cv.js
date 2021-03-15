@@ -15,6 +15,13 @@ export default function CV() {
       <Nav />
       <div className="cv">
         <h1 className="name">Felipe de Souza Valladão, CFA</h1>
+        <p className="profile">
+          I am a Chartered Financial Analyst with extensive experience in
+          quantitative finance and risk management. My passion is to solve
+          challenging problems and explore new ideas. I combine my knowledge of
+          Maths, Finance and Programming to simplify complex issues and find the
+          optimal solution.
+        </p>
         <Group title="Experience">
           <Entry
             position={"Risk Analyst"}
@@ -26,24 +33,39 @@ export default function CV() {
             to={"Present"}
           >
             <ul>
-              <li>Lead the development of Risk's Python related projects</li>
+              <li>Lead the development of Python projects in the Risk team</li>
               <li>
-                Develop and maintain in-house Risk's models, reports and tools
-                (Python/SQL)
+                Responsible for handling operational issues covering:
+                <ul>
+                  <li>Data extraction & cleaning</li>
+                  <li>Analysis & reconciliation</li>
+                  <li>Report monitoring & presentation</li>
+                </ul>
               </li>
               <li>
-                Assist trading with capital allocation optimization enquiries
+                Develop and maintain in-house models, reports and tools with a
+                diverse technological stack:
+                <ul>
+                  <li>Python (numpy, scipy, pandas)</li>
+                  <li>SQL</li>
+                  <li>Git</li>
+                  <li>Docker</li>
+                </ul>
+              </li>
+              <li>
+                Collaborate with trading to optimize the firm capital allocation
+              </li>
+              <li>Execute FX hedges to manage balance sheet exposures</li>
+              {/* <li>
+                Review and approve, where appropriate, limit requests from the
+                trading desks
               </li>
               <li>
                 Monitor daily trading activity to ensure the desks are operating
                 within limits
               </li>
-              <li>
-                Review and approve, where appropriate, limit requests from the
-                trading desks
-              </li>
-              <li>Execute FX hedges to manage balance sheet exposures</li>
-              <li>Monitor daily regulatory reports and their limits</li>
+              <li>Monitor daily regulatory reports and their limits</li> */}
+              <li>Monitor trading limits and approve limit extensions</li>
             </ul>
           </Entry>
           <Entry
@@ -52,55 +74,52 @@ export default function CV() {
             company={"UBS"}
             country="UK"
             city="London"
-            from={"Mar/2018"}
+            from={"Feb/2016"}
             to={"Oct/2018"}
           >
             <ul>
               <li>
+                Developed a stress market risk model in R and C++ with
+                statistical techniques:
+                <ul>
+                  <li>Time series modelling</li>
+                  <li>GARCH processes</li>
+                  <li>Elliptical copulas</li>
+                  <li>Monte Carlo simulation</li>
+                </ul>
+              </li>
+              <li>
+                This project was so successful it was the reason I was promoted
+                from analyst to associate director.
+              </li>
+              <li>
+                Created an interactive visualization tool with R (Shiny/ggplot2)
+                to explain the model's results to senior management which
+                facilitated understanding the outputs.
+              </li>
+              {/* <li>
                 Responsible for enhancing the stress market risk RWA model used
                 for CCAR/DFAST submissions.
-              </li>
+              </li> */}
               <li>
                 Executed model confirmation and documentation adhering to FED's
-                guidance on model risk management (SR 11-7).
+                guidance on model risk management (SR 11-7) and general
+                regulatory requirements.
               </li>
-              <li>
-                Assisted with the development of a Python-based tool to
-                calculate the P&L of callable municipal bonds in stress
-                scenarios.
-              </li>
-              <li>
-                Supported the presentation of model's results to senior
-                management by developing standardized reports (R & Shiny) to
-                facilitate understanding the model's outputs.
-              </li>
-            </ul>
-          </Entry>
-          <Entry
-            position={"Market Risk Analyst"}
-            role="Stress Testing Methodology"
-            company={"UBS"}
-            country="UK"
-            city="London"
-            from={"Feb/2016"}
-            to={"Mar/2018"}
-          >
-            <ul>
-              <li>
-                Developed the stress market risk RWA model for CCAR submission
-                in R and C++ utilizing time series modelling techniques (GARCH
-                processes, elliptical copulas, Monte Carlo simulation).
-              </li>
-              <li>
+              {/* <li>
+                Helped develop of a Python-based tool to calculate the P&L of
+                callable municipal bonds in stress scenarios.
+              </li> */}
+              {/* <li>
                 Responsible for model documentation in compliance with
                 regulatory and model validation requirements.
-              </li>
+              </li> */}
               <li>
                 Responsible for the team's market risk piece submission of the
                 annual MAS Industry Wide Stress-Test.
               </li>
               <li>
-                Liaised with IT and Change teams in the development of new
+                Collaborated with Tech teams in the development of new
                 functionalities within the market risk infra-structure.
               </li>
             </ul>
@@ -116,18 +135,11 @@ export default function CV() {
           >
             <ul>
               <li>Responsible for daily reporting</li>
-              <ul>
-                <li>Daily P&L</li>
-                <li>Risk reports</li>
-                <li>Fair Value Adjustment report</li>
-              </ul>
-              <li>Actively involved in the trading system migration.</li>
               <li>
                 Automated several processes bringing more efficiency to the
                 team.
               </li>
-              <li>Assisted with enquiries from audit.</li>
-              <li>Assisted with enquiries from the trading desk.</li>
+              <li>Assisted with enquiries from audit and trading</li>
             </ul>
           </Entry>
           <Entry
@@ -136,43 +148,19 @@ export default function CV() {
             company={"Modal Asset Management"}
             country="Brazil"
             city="Rio de Janeiro"
-            from={"Mar/2013"}
+            from={"Nov/2012"}
             to={"Sep/2013"}
           >
             <ul>
+              <li>Developed a VaR model based on Extreme Value Theory</li>
               <li>
-                Developed a new VaR model based on Extreme Value Theory using R
-                & Excel.
+                Developed new spreadhseets to improve the information provided
+                to the traders
               </li>
+              {/* <li>Assisted with due diligence inquiries.</li> */}
               <li>
-                Development of new spreadhseets to improve the information
-                provided to the traders.
+                Executed and optimized operational tasks with Excel and VBA
               </li>
-              <li>Assisted with due diligence inquiries.</li>
-              <li>Executed and optimized daily routines.</li>
-              <li>Analysed fund's and trader's performance.</li>
-            </ul>
-          </Entry>
-          <Entry
-            position={"Intern"}
-            role="Market Risk"
-            company={"Modal Asset Management"}
-            country="Brazil"
-            city="Rio de Janeiro"
-            from={"Nov/2012"}
-            to={"Mar/2013"}
-          >
-            <ul>
-              <li>Responsible for the execution of the daily routines:</li>
-              <ul>
-                <li>Daily P&L</li>
-                <li>Risk report</li>
-              </ul>
-              <li>
-                Responsible for the optimization and automation for the main
-                spreadsheets using Excel VBA.
-              </li>
-              <li>Analyzed the fund's and trader's performance.</li>
             </ul>
           </Entry>
         </Group>
