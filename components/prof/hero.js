@@ -12,7 +12,10 @@ export default function Hero() {
           cupiditate ducimus ut vitae eveniet officiis odio dicta. Unde
           laboriosam aliquam velit facilis?
         </p>
-        <img src="https://source.unsplash.com/random" alt="profile picture" />
+        <img
+          src="https://ch3301files.storage.live.com/y4mjtzEfGlIYuzoPlCJxYbcGizemjxXCbgpsgazlGXWjk0RZpfr6jBykQhCc76H2INHjkWvwakRlv689tp1B0MKHaRFv0cFyZGhQBu6VcjiRQv-4dqrSQw3H9Y7r-I_sIKoaK8LOkIno1EMXMD1u1eO0pOXPLcL6WTtIVFNVn5fpuWI_2wrsAlf6ZWkFOGh2kXp?width=441&height=660&cropmode=none"
+          alt="profile picture"
+        />
       </div>
     </div>
   );
