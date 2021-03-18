@@ -23,7 +23,26 @@
   }
 
   @media screen and (max-width: $breakpoint-sm) {
-    width: 17ch;
+    width: 20ch;
+  }
+}
+
+a.decorated {
+  position: relative;
+  color: lighten($color-primary, 5%);
+  display: inline-block;
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    width: 0ch;
+    height: max(0.1em, 1px);
+    background-color: $color-primary;
+    transition: all 350ms ease-in-out;
+  }
+  &:hover::after {
+    width: 100%;
   }
 }
 
@@ -160,9 +179,11 @@
 
   .hidden-nav {
     display: none;
+    font-family: "Lato", "Helvetica", sans-serif;
   }
 
   nav {
+    font-family: "Lato", "Helvetica", sans-serif;
     ul {
       align-items: center;
     }

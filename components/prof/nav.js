@@ -15,9 +15,9 @@ export default function Nav() {
             <li>
               <Link href="/professional/cv/">Experience</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/professional/projects/">Projects</Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/blog/">Blog</Link>
             </li>
@@ -61,9 +61,9 @@ export default function Nav() {
           <li>
             <Link href="/professional/cv/">Experience</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/professional/projects/">Projects</Link>
-          </li>
+          </li> */}
           <li>
             <Link href="/blog/">Blog</Link>
           </li>

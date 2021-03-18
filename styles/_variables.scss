@@ -26,7 +26,7 @@ $color-text-dark: $dark-1;
 ---------
 */
 
-$font-body: "Assistant", "Arial", "monospace";
+$font-body: "Lato", "Assistant", "Arial", "monospace";
 $font-title: "Spartan", "Helvetica", "sans-serif";
 
 $base-size: 1.41421356;
@@ -90,7 +90,7 @@ $breakpoint-xs: 400px;
 
 @media screen and (max-width: $breakpoint-lg) {
   :root {
-    --font-size-md: 1.6rem;
+    --font-size-md: 1.55rem;
   }
 }
 
