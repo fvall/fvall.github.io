@@ -14,9 +14,9 @@ export default function Skills() {
             </div>
             <h4>Mathematics</h4>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt ea
-              reiciendis quos iste amet commodi hic quisquam? Aliquid ratione at
-              neque animi hic nobis reiciendis!
+              I am an applied mathematician with skills in both theoretical and
+              practical topics. I always try to find a way to use math in my
+              tasks to execute them efficiently.
             </p>
           </div>
           <div className="skill">
@@ -28,9 +28,10 @@ export default function Skills() {
             </div>
             <h4>Finance</h4>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt ea
-              reiciendis quos iste amet commodi hic quisquam? Aliquid ratione at
-              neque animi hic nobis reiciendis!
+              Over 5 years experience in the financial industry covering risk,
+              modelling and quantitative analysis. I enjoy using my analytical
+              skills to make better financial decisions. I am also a CFA
+              charterholder.
             </p>
           </div>
           <div className="skill">
@@ -39,9 +40,9 @@ export default function Skills() {
             </div>
             <h4>Coding</h4>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt ea
-              reiciendis quos iste amet commodi hic quisquam? Aliquid ratione at
-              neque animi hic nobis reiciendis!
+              I have worked with a diverse tech stack over the years, which gave
+              me the opportunity to build different projects. I also find it fun
+              and rewarding to develop something from scratch.
             </p>
           </div>
         </div>

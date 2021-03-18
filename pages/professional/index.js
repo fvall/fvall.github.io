@@ -22,7 +22,7 @@ export default function ProfessionalHome() {
         <Hero />
         <About />
         <Skills />
-        <Projects />
+        {/* <Projects /> */}
         {/* <Contact /> */}
       </Sections>
     </div>

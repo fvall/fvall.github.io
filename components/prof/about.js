@@ -11,7 +11,14 @@ export default function About() {
           ideas and new approaches best suited to a particular project. I have
           the natural initiative to accomplish my tasks, however I prefer to
           work in teams as I believe collaboration is the key to get the best
-          outcome to any problem. Quoting LINUX
+          outcome to any problem. Quoting{" "}
+          <a
+            className="decorated"
+            href="https://youtu.be/7XTHdcmjenI?t=994"
+            target="_blank"
+          >
+            Jim Zemlin
+          </a>
         </p>
         <blockquote>All of us are smarter than any one of us</blockquote>
         <p className="description">
