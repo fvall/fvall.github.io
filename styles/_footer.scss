@@ -1,0 +1,77 @@
+footer {
+  border-top: solid 1px $color-primary;
+  background-color: $dark-1;
+  padding-bottom: 2rem;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-size: calc(var(--font-size-xs) * 0.85);
+
+  a {
+    color: white;
+    transition: color 0.3s linear;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  .container {
+    display: flex;
+    padding: 2rem 0;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .social-media,
+  .pages {
+    padding: 0.5em 1rem;
+    h1 {
+      font-family: Lato, Arial, Helvetica, sans-serif;
+      font-size: calc(var(--font-size-xs) * 0.9);
+      font-weight: 700;
+      text-align: center;
+      border-bottom: solid 1px white;
+      padding: 0.5rem 1rem;
+      margin-bottom: 0.5rem;
+    }
+    ul {
+      display: flex;
+      li {
+        list-style: none;
+      }
+    }
+  }
+
+  .social-media {
+    li {
+      padding: 0 0.5rem;
+    }
+  }
+
+  .pages {
+    a {
+      font-weight: 300;
+    }
+    li {
+      padding: 0 1rem;
+    }
+    li:not(:first-child) {
+      border-left: solid 1px white;
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top: 1rem;
+    h1 {
+      padding: 0.5em 0;
+      font-size: var(--font-size-xs);
+    }
+    p {
+      padding: 0.2em 0;
+    }
+  }
+
+  .project-page {
+    padding: 1em 0;
+    font-style: italic;
+  }
+}

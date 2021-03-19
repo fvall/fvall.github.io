@@ -34,7 +34,6 @@ export function BlogHome({ posts }) {
           <PostList posts={posts} />
         </main>
       </Content>
-      <footer></footer>
     </div>
   );
 }

@@ -797,5 +797,3 @@ If you made it this far, congratulations. We now have our own dashboard built wi
 There was a lot to cover in this part. If you felt a bit lost or if something did not work as you expected, you can check out this [repository](https://github.com/fvall/flask-dashboard) where you can see the finished project. If you want to see how part 1 of the series finished (this post) without getting overwhelmed with the next parts for this series, you can check out the branch [part1](https://github.com/fvall/flask-dashboard/tree/part1) in the repo. It contains code only up until the end of this post.
 
 Until next time. :rocket:
-
----

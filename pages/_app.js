@@ -11,6 +11,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faClock, faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
 
+import Footer from "../components/footer";
+
 // See https://github.com/FortAwesome/react-fontawesome#integrating-with-other-tools-and-frameworks
 config.autoAddCss = false; // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 library.add(
@@ -26,5 +28,10 @@ library.add(
 );
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <Footer />
+    </>
+  );
 }
