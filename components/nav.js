@@ -7,7 +7,7 @@ export default function Nav({ children }) {
       <div className="links">
         <ul>
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/">Blog</Link>
           </li>
           <li>
             <Link href="/about/">About</Link>

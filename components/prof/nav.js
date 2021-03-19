@@ -10,7 +10,7 @@ export default function Nav() {
           <ul>
             <Burger />
             <li>
-              <Link href="/professional/">About</Link>
+              <Link href="/professional/">Profile</Link>
             </li>
             <li>
               <Link href="/professional/cv/">Experience</Link>
@@ -56,7 +56,7 @@ export default function Nav() {
       <div className="hidden-nav hidden">
         <ul>
           <li>
-            <Link href="/professional/">About</Link>
+            <Link href="/professional/">Profile</Link>
           </li>
           <li>
             <Link href="/professional/cv/">Experience</Link>
