@@ -14,9 +14,9 @@ export default function Skills() {
             </div>
             <h4>Mathematics</h4>
             <p>
-              I am an applied mathematician with skills in both theoretical and
-              practical topics. I always try to find a way to use math in my
-              tasks to execute them efficiently.
+              I am a mathematician with skills in both theoretical and practical
+              topics. I always try to find a way to use math in my tasks to
+              execute them efficiently.
             </p>
           </div>
           <div className="skill">

@@ -12,7 +12,7 @@ export default function Hero() {
           skills to overcome them.
         </p>
         <img
-          src="https://ch3301files.storage.live.com/y4mjtzEfGlIYuzoPlCJxYbcGizemjxXCbgpsgazlGXWjk0RZpfr6jBykQhCc76H2INHjkWvwakRlv689tp1B0MKHaRFv0cFyZGhQBu6VcjiRQv-4dqrSQw3H9Y7r-I_sIKoaK8LOkIno1EMXMD1u1eO0pOXPLcL6WTtIVFNVn5fpuWI_2wrsAlf6ZWkFOGh2kXp?width=441&height=660&cropmode=none"
+          src="https://ch3301files.storage.live.com/y4mjtzEfGlIYuzoPlCJxYbcGizemjxXCbgpsgazlGXWjk0RZpfr6jBykQhCc76H2INHjkWvwakRlv689tp1B0MKHaRFv0cFyZGhQBu6VcjiRQv-4dqrSQw3H9Y7r-I_sIKoaK8LOkIno1EMXMD1u1eO0pOXPLcL6WTtIVFNVn5fpuWI_2wrsAlf6ZWkFOGh2kXp?width=440&height=660&cropmode=none"
           alt="profile picture"
         />
       </div>
