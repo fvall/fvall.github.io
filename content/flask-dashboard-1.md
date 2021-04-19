@@ -4,7 +4,7 @@ date: 2021-01-31
 categories: python, flask
 ---
 
-This is the first post of a three-part series of how to create a financial dashboard with Flask. [Flask](https://flask.palletsprojects.com) is a micro-framework to build web applications with Python. This project would be suitable for someone who would like to develop an analysis tool within the Python ecosystem and would like to create a dashboard to showcase their findings. In this series, I will focus on a financial dashboard but the ideas could easily extend to a variety of scenarios.
+This is the first post of a three-part series on how to create a financial dashboard with Flask. [Flask](https://flask.palletsprojects.com) is a micro-framework to build web applications with Python. This project would be suitable for someone who would like to develop an analysis tool within the Python ecosystem and would like to create a dashboard to showcase their findings. In this series, I will focus on a financial dashboard but the ideas could easily extend to a variety of scenarios.
 
 The series will be split into three parts:
 
@@ -39,7 +39,7 @@ Now that poetry is installed, let's configure our project folder structure.
 2. `cd` into the folder
 3. In the terminal execute the command: `poetry init`
 
-If everything occurred correctly, you should be prompted at the terminal to configure your project. The questions are straight-forward, there are just two of them which require attention. When asked if you wish to configure the **main dependencies** and the **dev dependencies**, choose **no**. We will be doing those manually instead.
+If everything occurred correctly, you should be prompted at the terminal to configure your project. The questions are straightforward, there are just two of them which require attention. When asked if you wish to configure the **main dependencies** and the **dev dependencies**, choose **no**. We will be doing those manually instead.
 
 Once you have answered all the question, you can simply type "yes" and a `pyproject.toml` file will be created within your folder. If you see this file, you're in the right track. :+1:
 
