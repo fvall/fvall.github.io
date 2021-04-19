@@ -4,17 +4,17 @@ date: 2021-04-13
 categories: python, flask
 ---
 
-This is the second post of a three-part series of how to create a financial dashboard with Flask. If you missed the first post, you can check it out [here](https://www.felipevalladao.com/blog/flask-dashboard-1/). In the last post we created a skeleton financial dashboard with fake market data. We could see some potential, but without real data the dashboard is not very useful. Time to pump in some actual data.
+This is the second post of a three-part series on how to create a financial dashboard with Flask. If you missed the first post, you can check it out [here](https://www.felipevalladao.com/blog/flask-dashboard-1/). In the last post, we created a skeleton financial dashboard with fake market data. We could see some potential, but without real data, the dashboard is not very useful. Time to pump in some actual data.
 
 ## Adding real market data
 
-There are a number of market data providers which give limited access for free. For example:
+There are several market data providers which give limited access for free. For example:
 
 1. [Alpha Vantage](https://www.alphavantage.co/)
 2. [Tiingo](https://www.tiingo.com/)
 3. [Twelve Data](https://twelvedata.com/)
 
-However, we are not going to use any of these. We are going to use the first data source I ever did any financial analysis while in university (ah the memories...). Today we will be using Yahoo Finance in our dashboard to show us useful market information. It's known Yahoo Finance has some issues, but for a simple personal dashboard it will suffice. However, you should probably consider alternatives if you are trading with real money as data issues can be very costly.
+However, we are not going to use any of these. Today, we will be using Yahoo Finance in our dashboard to show us useful market information, which is completely free. It's known Yahoo Finance has some issues, but for a simple personal dashboard, it will suffice. However, you should probably consider alternatives if you are trading with real money as data issues can be very costly.
 
 We will be using the `yfinance` package which implements functions to download data from Yahoo Finance. We can leverage the package to get the data for us and we will only need to pipe the data into our existing functions. We can't use the package if it is not installed, so the first step is to add it to our virtual environment with poetry.
 
@@ -29,7 +29,7 @@ poetry add yfinance
 </figcaption>
 </figure>
 
-Let's get some data. This new function will get data from Yahoo Finance and will later substitute our `fake_data` function in our dashboard.
+Let's get some data. This new function will get data from Yahoo Finance and later it will substitute our `fake_data` function in our dashboard.
 
 <figure>
 
@@ -82,13 +82,13 @@ def get_price_data(symbols, start_date = None, end_date = None):
 </figcaption>
 </figure>
 
-This function should be written in our `data.py` file. There's nothing too special about it, just a few curve balls the `yfinance` api throw at us which I mentioned in the comments. The variable `symbols` are the Yahoo symbols we will get the data for.
+This function should be written in our `data.py` file. There's nothing too special about it, just a few curveballs the `yfinance` API throw at us which I mentioned in the comments. The variable `symbols` are the Yahoo symbols we will get the data for.
 
-Because we are manipulating dates, it is much easier if we work with `datetime` objects instead of strings. However, sometimes is more convenient to pass dates as strings if we quickly working in the console. To do this effectively, the code above uses a `parse_date` function which translates strings into dates. We have not written this function yet, let's do it now.
+Because we are manipulating dates, it is much easier if we work with `datetime` objects instead of strings. However, sometimes is more convenient to pass dates as strings if we are quickly working in the console. To do this effectively, the code above uses a `parse_date` function which translates strings into dates. We have not written this function yet, let's do it now.
 
 ## Parsing dates
 
-Parsing dates is a simple task with the datetime module. If you have never done it, you can check the documentation [here](https://docs.python.org/3/library/datetime.html#datetime.datetime.strptime) but probably is very similar to other programming language you may have worked with. So, why do we need to write a specific function parse the dates?
+Parsing dates is a simple task with the datetime module. If you have never done it, you can check the documentation [here](https://docs.python.org/3/library/datetime.html#datetime.datetime.strptime) but probably it is very similar to other programming languages you may have worked with. So, why do we need to write a specific function to parse the dates?
 
 Well, we don't, but we can it make a bit easier to work with. One thing that annoys me when dealing with dates and strings is to remember the date format. I will adopt the convention the date will be provided in the YEAR, MONTH, DAY format. However, I see a lot of date strings which are similar but still require different date format. For example:
 
@@ -96,7 +96,7 @@ Well, we don't, but we can it make a bit easier to work with. One thing that ann
 - 2021/04/01
 - 2021_04_01
 
-All of these have years followed by months, followed by days. It would be nice if we could write a function which parse all of these cases. And that's exactly what our `parse_date` function will do. Its purpose is simply to give more flexibility when working with dates.
+All of these have years followed by months, followed by days. It would be nice if we could write a function that parse all of these cases. And that's exactly what our `parse_date` function will do. Its purpose is simply to give more flexibility when working with dates.
 
 <figure>
 
@@ -184,7 +184,7 @@ def calc_return(price_data, index = 1):
 </figcaption>
 </figure>
 
-Calculating returns is straight-forward, but in this case we are taking extra care to make sure we are computing it with the correct dates. This is specially important when dealing with assets from different regions and time zones. For example, Japanese and US equities. It is possible the data provider has already obtained the close prices for Japan while the US is still trading. In this case we can have a date mismatch in our calculation.
+Calculating returns is straightforward, but in this case, we are taking extra care to make sure we are computing it with the correct dates. This is especially important when dealing with assets from different regions and time zones. For example, Japanese and US equities. The data provider may have already obtained the close prices for Japan while the US is still trading. In this case, we can have a date mismatch in our calculation.
 
 We solve this by creating an inner function (in the case above `ret`) and applying the calculation for each symbol. As a side bonus, this also takes care of holidays in case we are running for a date in which it is a holiday in one region but not in the other.
 
@@ -194,7 +194,7 @@ Now our data.py file should be complete. If you have been following along, it sh
 
 ## Updating our dashboard
 
-Time to pump the market data to our dashboard. First we need to define which symbols we will display in our dashboard. I will use 5 ETFs:
+Time to pump the market data to our dashboard. First, we need to define which symbols we will display in our dashboard. I will use 5 ETFs:
 
 1. [SPY](https://finance.yahoo.com/quote/SPY)
 2. [EZU](https://finance.yahoo.com/quote/EZU)
@@ -202,7 +202,7 @@ Time to pump the market data to our dashboard. First we need to define which sym
 4. [EWJ](https://finance.yahoo.com/quote/EWJ)
 5. [EEM](https://finance.yahoo.com/quote/EEM)
 
-Next we need to define how many days we will display the data for. In my case I will display the last 90 days of data. To simply, I am defining the data extraction in the `home` function in our `index.py` file.
+Next, we need to define how many days we will display the data. In my case, I will display the last 90 days of data. To simplify, I am defining the data extraction in the `home` function in the `index.py` file.
 
 <figure>
 
@@ -240,7 +240,7 @@ Instead of displaying all the ETF prices, let's display only the:
 - most recent return
 - the monthly return
 
-This will give us a brief and yet meaningful summary about our ETFs. If we wish to analyse the performance over the entire 90 days, we can do so by analysing the chart. To do so, we will use our helper function `calc_return` which we created above.
+This will give us a brief and yet meaningful summary of our ETFs. If we wish to analyse the performance over the entire 90 days, we can do so by analysing the chart. To do so, we will use our helper function `calc_return` which we created above.
 
 <figure>
 
@@ -282,15 +282,15 @@ def home():
 </figcaption>
 </figure>
 
-Above I am using the convention that a month has 21 business days, feel free to change it to suit your needs. Because we had already done the heavy lifting with `calc_return`, we just need to use our helper function and do some data manipulation to make it look nice.
+Above I am using the convention that a month has 21 business days, but you can change it to any day count convention you prefer. Because we had already done the heavy lifting with `calc_return`, we just need to use our helper function and do some data manipulation to make it look nice.
 
-Alright, things are looking good but our table is a bit dull. Let's style it a bit. Pandas provides some incredible styling options to customize our HTML table. This series is not about pandas, so I will not go in depth about how to customize the HTML table. I encourage you to check our the [documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html) and all the amazing things you could do with it.
+Alright, things are looking good but our table is a bit dull. Let's style it a bit. Pandas provides some incredible styling options to customize our HTML table. This post is not about pandas, so I will not go in-depth about how to customize the HTML table. I encourage you to check out the [documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html) and all the amazing things you could do with it.
 
 I will style the table as follows:
 
 - positive returns show in green
 - negative returns show in red
-- add a percent symbol to returns
+- add a per cent symbol to returns
 - style numbers with 2 decimal places
 
 Our final version of the table looks like this.
@@ -473,7 +473,7 @@ Now our table should be looking like this. Much nicer!
 
 ### Updating our chart
 
-The last step is to update our chart. We already have the skeleton ready, we only need to pass the correct data. I am also changing the y-axis to display the values in percentage terms. Like this, we can easily compare our ETFs relative performance over time.
+The last step is to update our chart. We already have the skeleton ready, we only need to pass the correct data. I am also changing the y-axis to display the values in percentage terms. This way we can easily compare our ETFs relative performance over time.
 
 Our final index.py file looks like this. Note I combined all the imports at the top to make it easier to read.
 
@@ -605,7 +605,7 @@ def home():
 </figcaption>
 </figure>
 
-Now our chart is looking like the example below.
+Now our chart is looking like the example below. If something does not look right, you can check the final code of part 2 [here](https://github.com/fvall/flask-dashboard/tree/part2).
 
 <!-- Created with matplotlib (https://matplotlib.org/) -->
 <svg height="75%" version="1.1" viewBox="0 0 460.8 345.6" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -2173,8 +2173,8 @@ z
 
 ## Now it is your turn
 
-In this post we developed our dashboard to use market data from Yahoo Finance, styled our table and updated our chart. Now we can use this dashboard to track the relative performance of stocks, ETFs, currencies, etc easily. Now it is up to you! How can you improve this dashboard to suit your needs? For example, when we hover over our table, we lose the red/green colours we added in our styling. How could you change the code to prevent this from happening?
+In this post, we developed our dashboard to use market data from Yahoo Finance, styled our table and updated our chart. Now we can use this dashboard to track the relative performance of stocks, ETFs, currencies, etc, easily. Now it is up to you! How can you improve this dashboard to suit your needs? For example, when we hover over our table, we lose the red/green colours we added in our styling. How could you change the code to prevent this from happening?
 
-Our dashboard is useful, but it is a bit boring. It does not do anything, it just shows data. It would be nice if we could interact with it to display the data we want to see, not only a fixed set of symbols. That's excatly what we will be doing in part 3 of this Flask series. Stay tuned for the next episode!
+Our dashboard is useful, but it is a bit boring. It does not do anything, it just shows data. It would be nice if we could interact with it to display the data we want to see, not only a fixed set of symbols. That's exactly what we will be doing in part 3 of this Flask series. Stay tuned!
 
 :v:
