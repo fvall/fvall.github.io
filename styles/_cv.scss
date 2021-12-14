@@ -148,7 +148,7 @@
         grid-template-rows: 1fr;
         align-items: center;
         justify-items: center;
-        max-width: $breakpoint-sm / 2;
+        max-width: calc($breakpoint-sm / 2);
         gap: 0 8px;
       }
 
