@@ -47,7 +47,7 @@ export default function Footer() {
       </div>
       <div className="copyright">
         <h1>Felipe de Souza Valladão</h1>
-        <p>Copyright © 2020-2021</p>
+        <p>Copyright © 2020-2022</p>
         <p>All rights reserved</p>
         <div className="project-page">
           This website is maintained by{" "}
