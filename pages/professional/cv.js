@@ -24,7 +24,7 @@ export default function CV() {
         </p>
         <Group title="Experience">
           <Entry
-            position={"Risk Analyst"}
+            position={"Senior Risk Analyst"}
             role="Quantitative Analyst"
             company={"Trading firm"}
             country="UK"
