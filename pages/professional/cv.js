@@ -24,13 +24,28 @@ export default function CV() {
         </p>
         <Group title="Experience">
           <Entry
+            position={"Quantitative Researcher"}
+            role="Events"
+            company={"Trading firm"}
+            country="UK"
+            city="London"
+            from={"Apr/2022"}
+            to={"Present"}
+          >
+            <ul>
+              <li>Research a new alpha in the M&A space to be used by the firm's Equity strategies</li>
+              <li>Responsible for data extraction, manipulation and analysis used in the research</li>
+              <li>Develop the framework to analyse the data with statistical and machine learning models</li>
+            </ul>
+          </Entry>
+          <Entry
             position={"Senior Risk Analyst"}
-            role="Quantitative Analyst"
+            role="Risk"
             company={"Trading firm"}
             country="UK"
             city="London"
             from={"Oct/2018"}
-            to={"Present"}
+            to={"Apr/2022"}
           >
             <ul>
               <li>Lead the development of Python projects in the Risk team</li>
@@ -48,7 +63,7 @@ export default function CV() {
                 <ul>
                   <li>Python (numpy, scipy, pandas)</li>
                   <li>SQL</li>
-                  <li>Git</li>
+                  <li>git</li>
                   <li>Docker</li>
                 </ul>
               </li>
@@ -56,15 +71,6 @@ export default function CV() {
                 Collaborate with trading to optimize the firm capital allocation
               </li>
               <li>Execute FX hedges to manage balance sheet exposures</li>
-              {/* <li>
-                Review and approve, where appropriate, limit requests from the
-                trading desks
-              </li>
-              <li>
-                Monitor daily trading activity to ensure the desks are operating
-                within limits
-              </li>
-              <li>Monitor daily regulatory reports and their limits</li> */}
               <li>Monitor trading limits and approve limit extensions</li>
             </ul>
           </Entry>
