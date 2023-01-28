@@ -24,28 +24,13 @@ export default function CV() {
         </p>
         <Group title="Experience">
           <Entry
-            position={"Quantitative Researcher"}
-            role="Events"
-            company={"Trading firm"}
-            country="UK"
-            city="London"
-            from={"Apr/2022"}
-            to={"Present"}
-          >
-            <ul>
-              <li>Research a new alpha in the M&A space to be used by the firm's Equity strategies</li>
-              <li>Responsible for data extraction, manipulation and analysis used in the research</li>
-              <li>Develop the framework to analyse the data with statistical and machine learning models</li>
-            </ul>
-          </Entry>
-          <Entry
             position={"Senior Risk Analyst"}
             role="Risk"
             company={"Trading firm"}
             country="UK"
             city="London"
             from={"Oct/2018"}
-            to={"Apr/2022"}
+            to={"Present"}
           >
             <ul>
               <li>Lead the development of Python projects in the Risk team</li>
@@ -72,6 +57,21 @@ export default function CV() {
               </li>
               <li>Execute FX hedges to manage balance sheet exposures</li>
               <li>Monitor trading limits and approve limit extensions</li>
+            </ul>
+          </Entry>
+          <Entry
+            position={"Quantitative Researcher"}
+            role="Events"
+            company={"Trading firm"}
+            country="UK"
+            city="London"
+            from={"Apr/2022"}
+            to={"Oct/2022"}
+          >
+            <ul>
+              <li>Research a new alpha in the M&A space to be used by the firm's Equity strategies</li>
+              <li>Responsible for data extraction, manipulation and analysis used in the research</li>
+              <li>Develop the framework to analyse the data with statistical and machine learning models</li>
             </ul>
           </Entry>
           <Entry
