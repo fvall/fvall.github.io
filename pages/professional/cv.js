@@ -71,7 +71,7 @@ export default function CV() {
             <ul>
               <li>Research a new alpha in the M&A space to be used by the firm's Equity strategies</li>
               <li>Responsible for data extraction, manipulation and analysis used in the research</li>
-              <li>Develop the framework to analyse the data with statistical and machine learning models</li>
+              <li>Develop the framework to analyse the data with statistical and machine learning models (Gradient Boosting Trees)</li>
             </ul>
           </Entry>
           <Entry
