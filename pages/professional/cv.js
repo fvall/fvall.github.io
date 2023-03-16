@@ -226,14 +226,19 @@ export default function CV() {
             <SkillDesc name="Equities" level="4" />
             <SkillDesc name="Fixed income" level="3" />
           </SkillList>
-          <SkillList name="Programming">
-            <SkillDesc name="Python" level="5" />
-            <SkillDesc name="R" level="4" />
-            <SkillDesc name="SQL" level="3" />
+          <SkillList name="Programming/Technologies">
             <SkillDesc name="Excel" level="5" />
             <SkillDesc name="VBA" level="4" />
+            <SkillDesc name="Python" level="4" />
+            <SkillDesc name="R" level="4" />
+            <SkillDesc name="SQL" level="3" />
+            <SkillDesc name="git" level="3" />
             <SkillDesc name="C++" level="2" />
+            <SkillDesc name="Rust" level="2" />
+            <SkillDesc name="Matlab" level="2" />
             <SkillDesc name="Latex" level="2" />
+            <SkillDesc name="Docker" level="2" />
+            <SkillDesc name="Bash" level="2" />
           </SkillList>
         </Group>
       </div>
