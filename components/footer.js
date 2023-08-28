@@ -2,6 +2,8 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Footer() {
+  const date = new Date()
+  const year = date.getUTCFullYear()
   return (
     <footer>
       <div className="container">
@@ -47,7 +49,7 @@ export default function Footer() {
       </div>
       <div className="copyright">
         <h1>Felipe de Souza Valladão</h1>
-        <p>Copyright © 2020-2023</p>
+        <p>Copyright © 2020-{year}</p>
         <p>All rights reserved</p>
         <div className="project-page">
           This website is maintained by{" "}

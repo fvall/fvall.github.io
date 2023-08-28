@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import Nav from "../components/nav";
 import Content from "../components/content";
 import Title from "../components/title";

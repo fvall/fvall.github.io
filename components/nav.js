@@ -12,6 +12,9 @@ export default function Nav({ children }) {
           <li>
             <Link href="/about/">About</Link>
           </li>
+          <li>
+            <Link href="/professional/">Professional</Link>
+          </li>
         </ul>
       </div>
       <div className="social-media">
