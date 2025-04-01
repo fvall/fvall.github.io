@@ -26,30 +26,41 @@ export default function CV() {
           <Entry
             position={"Senior Risk Analyst"}
             role="Risk"
-            company={"Trading firm"}
-            country="UK"
-            city="London"
+            company={"Tibra Capital"}
+            country="UK/ES"
+            city="London/Barcelona"
             from={"Oct/2018"}
-            to={"Present"}
+            to={"Mar/2025"}
           >
             <ul>
-              <li>Lead the development of Python projects in the Risk team</li>
-              <li>
-                Responsible for handling operational issues covering:
+              <li>Lead the development of Risk’s Python related projects including:
                 <ul>
-                  <li>Data extraction & cleaning</li>
-                  <li>Analysis & reconciliation</li>
-                  <li>Report monitoring & presentation</li>
+                  <li>Created a risk factor model to explain the Equity portfolio daily pnl using statistical and clustering analysis</li>
+                  <li>Developed an internal market data library for the team, consolidating the different data sources into a common API to
+                  speed the team’s developments in other projects</li>
+                  <li>Developed parsing libraries to ingest external data (xls, txt, pdf, ...) into the company’s databases so it could be used by
+                  the internal tools</li>
+                  <li>Replicated and reversed engineer the margin models used by the firm’s counterparties to improve trading decisions, by
+                  predicting the desk’s capital usage given their strategies, allowing traders to optimize their return on capital</li>
+                  <li>Monitoring tools for the team combining internal and external data</li>
                 </ul>
               </li>
               <li>
                 Develop and maintain in-house models, reports and tools with a
                 diverse technological stack:
                 <ul>
-                  <li>Python (numpy, scipy, pandas)</li>
+                  <li>Python (pandas, numpy, scipy, numba)</li>
                   <li>SQL</li>
                   <li>git</li>
-                  <li>Docker</li>
+                  <li>Docker/K8S</li>
+                </ul>
+              </li>
+              <li>
+                Responsible for handling operational issues covering:
+                <ul>
+                  <li>Data extraction & cleaning</li>
+                  <li>Analysis & reconciliation</li>
+                  <li>Report monitoring & presentation</li>
                 </ul>
               </li>
               <li>
@@ -62,7 +73,7 @@ export default function CV() {
           <Entry
             position={"Quantitative Researcher"}
             role="Events"
-            company={"Trading firm"}
+            company={"Tibra Capital"}
             country="UK"
             city="London"
             from={"Apr/2022"}
@@ -170,13 +181,13 @@ export default function CV() {
             </ul>
           </Entry>
         </Group>
-        {/* <Group title="Certifications">
+        <Group title="Certifications">
           <div className="credentials">
             <ul>
               <li>CFA® charterholder, CFA Institute.</li>
             </ul>
           </div>
-        </Group> */}
+        </Group>
         <Group title="Education">
           <Entry
             position={"Msc in Finance"}
@@ -215,26 +226,26 @@ export default function CV() {
           <SkillList name="Mathematics">
             <SkillDesc name="Probability" level="4" />
             <SkillDesc name="Time Series" level="4" />
-            <SkillDesc name="Econometrics" level="3" />
             <SkillDesc name="Statistics" level="4" />
             <SkillDesc name="Linear Algebra" level="4" />
+            <SkillDesc name="Econometrics" level="3" />
           </SkillList>
           <SkillList name="Finance">
             <SkillDesc name="Value at Risk" level="5" />
             <SkillDesc name="Stress testing" level="4" />
-            <SkillDesc name="Derivatives" level="3" />
             <SkillDesc name="Equities" level="4" />
             <SkillDesc name="Fixed income" level="3" />
+            <SkillDesc name="Derivatives" level="3" />
           </SkillList>
           <SkillList name="Programming/Technologies">
             <SkillDesc name="Excel" level="5" />
-            <SkillDesc name="VBA" level="4" />
             <SkillDesc name="Python" level="4" />
-            <SkillDesc name="R" level="4" />
+            <SkillDesc name="git" level="4" />
             <SkillDesc name="SQL" level="3" />
-            <SkillDesc name="git" level="3" />
+            <SkillDesc name="Rust" level="3" />
+            <SkillDesc name="R" level="3" />
+            <SkillDesc name="VBA" level="2" />
             <SkillDesc name="C++" level="2" />
-            <SkillDesc name="Rust" level="2" />
             <SkillDesc name="Matlab" level="2" />
             <SkillDesc name="Latex" level="2" />
             <SkillDesc name="Docker" level="2" />
