@@ -792,7 +792,7 @@ To do this, we pass the **_safe_** flag to our variables. After the template is 
 
 If you made it this far, congratulations. We now have our own dashboard built with Flask, pandas and matplotlib. The dashboard looks alright, but at the moment is not very useful since we only used fake data. In the next part of this series, we will source actual market data and pipe it to our dashboard. If you followed along like me, your dashboard should be looking like this. Note that the data is currently random, so your numbers and chart will look a bit different.
 
-<img src="https://ch3301files.storage.live.com/y4mVFXjYbOeI5dMUFAUeI062Rle4X0dkrkZRGHH6Y45B7PnLWHaGox2s6t5gQhasZLgmKnfMFgOBeW5t-MkMqA4YMo0baqyCgsDxFO7INf16ontOQbJnCLFjFXauh8wioB6wX8Qfkzdtui5usO3klqm9oEyoho0_gpOnhAJQ_xqo3m7rPDJ_EIIh_Ku3ZnEoPgB?width=1280&height=1584&cropmode=none" alt="final-dashboard"/>
+<img src="/images/flask-dashboard.png" alt="final-dashboard"/>
 
 There was a lot to cover in this part. If you felt a bit lost or if something did not work as you expected, you can check out this [repository](https://github.com/fvall/flask-dashboard) where you can see the finished project. If you want to see how part 1 of the series finished (this post) without getting overwhelmed with the next parts for this series, you can check out the branch [part1](https://github.com/fvall/flask-dashboard/tree/part1) in the repo. It contains code only up until the end of this post.
 

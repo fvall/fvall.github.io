@@ -38,7 +38,7 @@ So, what is the problem with the reasoning above? The issue is that the informat
 
 At first, it may seem these are equivalent, but in fact, they are not. I created a visual representation, with the solution, to our original problem.
 
-<img src="https://ebezgw.ch.files.1drv.com/y4mlilHMiHKDloxOFKlM4JtDtGrDCsFhIOi-5yt-Jf62VZ0igMLcyOx4Vm-njXT4execoFraQ8045ppxyGaqWaeseyqZar3JekzLfNiK7Zidk2mNY8QBO6s661oJaUiIiQru40cF0rB0NCn2lLzKk3taB4PyIZVG8AaaqhZOEL-Lr-8pW52SRS4KShVzOOauQqyZhKadRcCOEvEWv5SiVtPhQ/bayes_rule_1.gif" alt="conditional-prob-1">
+<img src="/images/bayes_rule_1.gif" alt="conditional-prob-1">
 
 ## The actual mathematics
 
@@ -76,7 +76,7 @@ I created the same GIF as above, but using [Venn diagrams](https://en.wikipedia.
 
 <br>
 
-<img src="https://gbcydw.ch.files.1drv.com/y4mHQcqSHkBOlv5dTJ94FD4YLyJ4LoU8PwfsQTWu2r64ROY-HS6RsS3lR1LboCeXWDITGIHYus0bBQWqP-3qLzZCGEa6zfYAv_oIyMoGt8keK0qxSv3czpQCgeYzbx9LoAVE_bMCLz-pBI0jTRweI_mu7YTbwQHxFLjn6TMmtCHPk8nAmQa8ublRqd3_Zg7Oau7VvR_VqsqTVhPPs3kR93qKw/bayes_rule_2.gif" alt="conditional-prob-2">
+<img src="/images/bayes_rule_2.gif" alt="conditional-prob-2">
 
 ## Conditional probability "in action"
 
