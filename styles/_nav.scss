@@ -12,8 +12,10 @@ nav {
   border-bottom-style: solid;
   border-bottom-color: $dark-2;
   font-size: calc(var(--font-size-sm) * 1.05);
+
   ul {
     display: flex;
+
     li {
       list-style: none;
     }
@@ -23,8 +25,10 @@ nav {
     li {
       padding-left: $space-1;
       padding-right: $space-4;
+
       a {
         position: relative;
+
         &::before {
           content: "";
           position: absolute;
@@ -37,6 +41,7 @@ nav {
           background-color: $color-primary;
           transition: all 0.3s ease-out;
         }
+
         &:hover::before {
           visibility: visible;
           transform: scaleX(1);
@@ -44,13 +49,17 @@ nav {
       }
     }
   }
+
   .social-media {
     display: flex;
+
     li {
       padding: 0rem $space-1 * 1.5;
     }
+
     svg {
       transition: 0.35s ease-out;
+
       &:hover {
         color: lighten($color-primary, 5%);
       }
@@ -67,6 +76,7 @@ nav {
 @media screen and (max-width: $breakpoint-xs) {
   nav {
     padding: $space-2 $em-space-3;
+
     .social-media {
       li {
         padding: 0rem $space-1;

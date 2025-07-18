@@ -4,6 +4,7 @@ import Hero from "../../components/prof/hero";
 import About from "../../components/prof/about";
 import Skills from "../../components/prof/skills";
 import Sections from "../../components/prof/section";
+import Projects from "../../components/prof/projects";
 
 export default function ProfessionalHome() {
   return (
@@ -20,7 +21,7 @@ export default function ProfessionalHome() {
         <Hero />
         <About />
         <Skills />
-        {/* <Projects /> */}
+        <Projects />
         {/* <Contact /> */}
       </Sections>
     </div>

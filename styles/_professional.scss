@@ -308,6 +308,188 @@ a.decorated {
   min-height: 100%;
 }
 
+// $color-primary-lighter: lighten($color-primary, 5%);
+$color-primary-lighter: darken($color-primary, 5%);
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  // border-width: 5px;
+  // border-style: solid;
+  // border-color: yellow;
+
+  &:has(.proj-card:hover) {
+    .proj-card:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+
+  .proj1::before {
+    content: "";
+    position: absolute;
+    background-image: url("/images/file-system.jpg");
+    background-size: cover;
+    background-position: center;
+    inset: 0;
+    opacity: 0.10;
+    z-index: -1;
+  }
+
+  .proj2::before {
+    content: "";
+    position: absolute;
+    background-image: url("/images/dashboard.jpeg");
+    background-size: cover;
+    background-position: center;
+    inset: 0;
+    opacity: 0.10;
+    z-index: -1;
+  }
+
+  .proj3::before {
+    content: "";
+    position: absolute;
+    background-image: url("/images/api.jpg");
+    background-size: cover;
+    background-position: center;
+    inset: 0;
+    opacity: 0.10;
+    z-index: -1;
+  }
+
+  .proj4::before {
+    content: "";
+    position: absolute;
+    background-image: url("/images/ui.jpeg");
+    background-size: cover;
+    background-position: center;
+    inset: 0;
+    opacity: 0.10;
+    z-index: -1;
+  }
+
+
+  .proj5::before {
+    content: "";
+    position: absolute;
+    background-image: url("/images/ml.jpeg");
+    background-size: cover;
+    background-position: center;
+    inset: 0;
+    opacity: 0.10;
+    z-index: -1;
+  }
+
+
+  .proj6::before {
+    content: "";
+    position: absolute;
+    background-image: url("/images/ml-noir.jpg");
+    background-size: cover;
+    background-position: center;
+    inset: 0;
+    opacity: 0.10;
+    z-index: -1;
+  }
+
+  .proj1,
+  .proj2,
+  .proj3,
+  .proj4,
+  .proj5,
+  .proj6 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .proj-card {
+    margin: 1em 1em;
+    min-width: 5em;
+    max-width: 25em;
+    min-height: 10em;
+    max-height: 25em;
+    height: 85%;
+    width: 90%;
+    border-color: $color-text-light;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 0.8em;
+    box-shadow: 0 0 1.5em $dark-3;
+    cursor: pointer;
+    z-index: 0;
+
+
+    div {
+      text-align: center;
+    }
+
+    p {
+      color: $color-text-light;
+      text-align: justify;
+      font-size: var(--font-size-xs);
+    }
+
+    h2 {
+      transition: text-decoration-color 250ms ease-in-out;
+      transition: text-decoration-thickness 250ms ease-in-out;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: max(0.1em, 1px);
+        transform: scaleX(0);
+        visibility: hidden;
+        background-color: $color-primary;
+        transition: all 0.3s ease-out;
+      }
+
+    }
+
+    &:hover {
+      h2 {
+
+        &::before {
+          visibility: visible;
+          transform: scaleX(1);
+        }
+      }
+
+      transform: scale(1.1);
+    }
+
+    transition: all 250ms ease-in-out;
+  }
+
+  h2.proj-title {
+    font-size: var(--font-size-md);
+    font-weight: bold;
+    text-align: center;
+    color: $color-text-light;
+    text-decoration: none;
+    text-decoration-thickness: 0.0px;
+    margin: 0.5em auto 1.2em auto;
+    position: relative;
+    display: inline-block;
+  }
+
+}
+
+@media (hover: none) {
+  .projects {
+    .proj-card {
+      h2.proj-title {
+        text-decoration-color: $color-primary;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: $breakpoint-lg) {
   .prof-section {
     padding: $rem-space-8 $rem-space-10;
@@ -319,6 +501,12 @@ a.decorated {
     padding: $rem-space-8 $rem-space-8;
     height: 100%;
   }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: $breakpoint-sm) {
@@ -328,6 +516,16 @@ a.decorated {
 
     h2 {
       margin-top: 0.5em;
+    }
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+
+    .proj-card {
+      margin: 1em auto;
     }
   }
 }
